@@ -61,7 +61,7 @@
         <Button x:Name="button1_copy" HorizontalAlignment="Left" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Width="198" Margin="0,247,0,0" Grid.Row="1" Height="50">
             <StackPanel Orientation="Horizontal">
                 <Image Source="Photos/planeticket.png" Width="42" Height="42"/>
-                <TextBlock Text="Мої білети"
+                <TextBlock Text="Мої квитки"
                           FontWeight="Light"
                           FontFamily="helvetica"
                           FontSize="30"
@@ -69,7 +69,7 @@
                           Foreground="White"
                           VerticalAlignment="Center"
                           HorizontalAlignment="Stretch" 
-                          Width="140" 
+                          Width="142" 
                           Height="40"/>
             </StackPanel>
         </Button>
