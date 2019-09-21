@@ -1,0 +1,1 @@
+select * from Testdb.dbo.MyTable;
