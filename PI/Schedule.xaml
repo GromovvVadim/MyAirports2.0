@@ -1,0 +1,22 @@
+﻿<Page x:Class="PI.Schedule"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PI"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Schedule">
+
+    <Grid Name ="dsadasdas" Margin="-5,-5,0,0">
+        <Grid.Background>
+            <LinearGradientBrush>
+                <GradientStop Color="#7be9f6" Offset="0.0"/>
+                <GradientStop Color="#f083da" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <TextBlock Text="Schedule" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32">
+
+        </TextBlock>
+    </Grid>
+</Page>

@@ -73,10 +73,30 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Cabinet.xaml.cs">
+      <DependentUpon>Cabinet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FindPage.xaml.cs">
+      <DependentUpon>FindPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyTickets.xaml.cs">
+      <DependentUpon>MyTickets.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Registration.xaml.cs">
       <DependentUpon>Registration.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Schedule.xaml.cs">
+      <DependentUpon>Schedule.xaml</DependentUpon>
+    </Compile>
     <Page Include="ButtonTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Cabinet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FindPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -96,7 +116,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MyTickets.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Registration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Schedule.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -154,6 +182,9 @@
   <ItemGroup>
     <Resource Include="Photos\calendar.png" />
     <Resource Include="Photos\profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Photos\exit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

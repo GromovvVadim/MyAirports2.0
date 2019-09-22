@@ -37,14 +37,28 @@ namespace PI
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
-           
+            Application.Current.Shutdown();
         }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void CabinetButton_Click(object sender, RoutedEventArgs e)
         {
+            Main.Content = new Cabinet();
+        }
 
+        private void ScheduleButton_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Schedule();
+        }
+
+        private void FindButton_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new FindPage();
+        }
+        private void MyTicketsButton_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new MyTickets();
         }
     }
 }
