@@ -23,7 +23,12 @@ namespace PI
         {
             InitializeComponent();
         }
-
+        public Menu(string login)
+        {
+            InitializeComponent();
+            Login = login;
+        }
+        public string Login { get; set; }
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -34,7 +39,12 @@ namespace PI
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("dasda");
+           
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

@@ -28,13 +28,13 @@
                           FontSize="33"
                           HorizontalAlignment="Center"
                           Foreground="White" RenderTransformOrigin="0.5,0.5" Margin="10,0,702,452" Width="188" Grid.Row="1"/>
-        <Button x:Name="button" Click="Button_Click" HorizontalAlignment="Right" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Margin="0,136,702,0" Grid.Row="1" VerticalAlignment="Top" Width="198" Height="50">
+        <Button x:Name="button" Click="Button_Click" HorizontalAlignment="Stretch" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Margin="0,136,702,0" Grid.Row="1" VerticalAlignment="Top" Height="50">
             <StackPanel Orientation="Horizontal">
                 <Image Source="Photos/find.png" Width="42" Height="42"/>
                 <TextBlock Text="Знайти"
                           FontWeight="Light"
                           FontFamily="helvetica"
-                          FontSize="30"
+                          FontSize="26"
                           Padding="3"
                           Foreground="White"
                           VerticalAlignment="Center"
@@ -49,7 +49,7 @@
                 <TextBlock Text="Розклад"
                           FontWeight="Light"
                           FontFamily="helvetica"
-                          FontSize="30"
+                          FontSize="26"
                           Padding="3"
                           Foreground="White"
                           VerticalAlignment="Center"
@@ -64,7 +64,7 @@
                 <TextBlock Text="Мої квитки"
                           FontWeight="Light"
                           FontFamily="helvetica"
-                          FontSize="30"
+                          FontSize="26"
                           Padding="3"
                           Foreground="White"
                           VerticalAlignment="Center"
@@ -79,7 +79,7 @@
                 <TextBlock Text="Кабінет"
                           FontWeight="Light"
                           FontFamily="helvetica"
-                          FontSize="30"
+                          FontSize="26"
                           Padding="3"
                           Foreground="White"
                           VerticalAlignment="Center"
@@ -88,5 +88,141 @@
                           Height="40"/>
             </StackPanel>
         </Button>
+        <Grid Name="FindPanel" HorizontalAlignment="Left" Margin="198,0,0,245" Width="692" Grid.RowSpan="2">
+            <StackPanel Margin="10,10,476,179" Width="206">
+                <TextBlock Text="Depart Airport*"
+                          FontWeight="Light"
+                          FontFamily="helvetica"
+                          FontSize="20"
+                          Padding="3"
+                          Foreground="Black"
+                          VerticalAlignment="Center"
+                          HorizontalAlignment="Stretch" 
+                          Height="32"/>
+                <ComboBox DataContext="1" Name="DepartAirport" Height="30" VerticalAlignment="Top">
+                    <TextBlock>LG Nexus 5X</TextBlock>
+                    <TextBlock>Huawai Nexus 6P</TextBlock>
+                    <TextBlock>iPhone 6S</TextBlock>
+                    <TextBlock>iPhone 6S Plus</TextBlock>
+                    <TextBlock>Microsoft Lumia 950</TextBlock>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Margin="255,10,231,179" Width="206">
+                <TextBlock Text="Arrival Airport*"
+                    FontWeight="Light"
+                    FontFamily="helvetica"
+                    FontSize="20"
+                    Padding="3"
+                    Foreground="Black"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Stretch" 
+                    Height="32"/>
+                <ComboBox DataContext="1" x:Name="ArrivalAirport" Height="30" VerticalAlignment="Top">
+                    <TextBlock><Run Text="LG Nexus 5X"/></TextBlock>
+                    <TextBlock><Run Text="Huawai Nexus 6P"/></TextBlock>
+                    <TextBlock><Run Text="iPhone 6S"/></TextBlock>
+                    <TextBlock><Run Text="iPhone 6S Plus"/></TextBlock>
+                    <TextBlock><Run Text="Microsoft Lumia 950"/></TextBlock>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Margin="486,10,0,179" Width="206">
+                <TextBlock Text="Date*"
+                    FontWeight="Light"
+                    FontFamily="helvetica"
+                    FontSize="20"
+                    Padding="3"
+                    Foreground="Black"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Stretch" 
+                    Height="32"/>
+                <DatePicker Name="DatePicker" Height="32" SelectedDateFormat="Long">
+                    
+                </DatePicker>
+            </StackPanel>
+            <StackPanel Margin="10,108,476,81" Width="206">
+                <TextBlock Text="Adult*"
+                    FontWeight="Light"
+                    FontFamily="helvetica"
+                    FontSize="20"
+                    Padding="3"
+                    Foreground="Black"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Stretch" 
+                    Height="32"/>
+                <ComboBox DataContext="1" x:Name="CountAdult" Height="30" VerticalAlignment="Top">
+                    <TextBlock><Run Text="0"/></TextBlock>
+                    <TextBlock><Run Text="1"/></TextBlock>
+                    <TextBlock><Run Text="2"/></TextBlock>
+                    <TextBlock><Run Text="3"/></TextBlock>
+                    <TextBlock><Run Text="4"/></TextBlock>
+                    <TextBlock><Run Text="5"/></TextBlock>
+                    <TextBlock><Run Text="6"/></TextBlock>
+                    <TextBlock><Run Text="7"/></TextBlock>
+                    <TextBlock><Run Text="8"/></TextBlock>
+                    <TextBlock><Run Text="9"/></TextBlock>
+                    
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Margin="255,108,231,81" Width="206">
+                <TextBlock Text="Child(2 - 11)*"
+                    FontWeight="Light"
+                    FontFamily="helvetica"
+                    FontSize="20"
+                    Padding="3"
+                    Foreground="Black"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Stretch" 
+                    Height="32"/>
+                <ComboBox DataContext="1" x:Name="CountChild" Height="30" VerticalAlignment="Top">
+                    <TextBlock><Run Text="0"/></TextBlock>
+                    <TextBlock><Run Text="1"/></TextBlock>
+                    <TextBlock><Run Text="2"/></TextBlock>
+                    <TextBlock><Run Text="3"/></TextBlock>
+                    <TextBlock><Run Text="4"/></TextBlock>
+                    <TextBlock><Run Text="5"/></TextBlock>
+                    <TextBlock><Run Text="6"/></TextBlock>
+                    <TextBlock><Run Text="7"/></TextBlock>
+                    <TextBlock><Run Text="8"/></TextBlock>
+                    <TextBlock><Run Text="9"/></TextBlock>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Margin="486,108,0,81" Width="206">
+                <TextBlock Text="Infant*"
+                    FontWeight="Light"
+                    FontFamily="helvetica"
+                    FontSize="20"
+                    Padding="3"
+                    Foreground="Black"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Stretch" 
+                    Height="32"/>
+                <ComboBox DataContext="1" x:Name="CountInfant" Height="30" VerticalAlignment="Top">
+                    <TextBlock><Run Text="0"/></TextBlock>
+                    <TextBlock><Run Text="1"/></TextBlock>
+                    <TextBlock><Run Text="2"/></TextBlock>
+                    <TextBlock><Run Text="3"/></TextBlock>
+                    <TextBlock><Run Text="4"/></TextBlock>
+                    <TextBlock><Run Text="5"/></TextBlock>
+                    <TextBlock><Run Text="6"/></TextBlock>
+                    <TextBlock><Run Text="7"/></TextBlock>
+                    <TextBlock><Run Text="8"/></TextBlock>
+                    <TextBlock><Run Text="9"/></TextBlock>
+                </ComboBox>
+            </StackPanel>
+            <Button Margin="10,204,546,10"
+                    Name ="SearchFlights"
+                    Content="Search"
+                    FontWeight="Light"
+                    FontFamily="helvetica"
+                    FontSize="20"
+                    Padding="3"
+                    Foreground="Black"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Stretch" 
+                    Height="32">
+            </Button>
+            
+        </Grid>
+
     </Grid>
 </Window>

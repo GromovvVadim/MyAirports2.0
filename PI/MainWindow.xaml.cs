@@ -12,12 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.Data;
 
 namespace PI
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
+    
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -35,14 +39,39 @@ namespace PI
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-            Menu menuWindow = new Menu();
-            this.Visibility = Visibility.Hidden;
-            menuWindow.Show();
+            try
+            {
+                string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=testdb;Integrated Security=True";
+                string query = $"SELECT Count(*) from Customer where Login = '{Login1.Text.ToString()}' AND Password = '{Password.Password}'";
+
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand(query, connection);
+                    object count = command.ExecuteScalar();
+                    if ((int)count == 1)
+                    {
+                        Menu menuWindow = new Menu(Login1.Text.ToString());
+                        this.Visibility = Visibility.Hidden;
+                        menuWindow.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Wrong login or password");
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show(ee.Message);
+            }
         }
 
         private void CloseProgram_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            this.Close();
+            Application.Current.Shutdown();
         }
 
         private void Registation_Click(object sender, RoutedEventArgs e)
