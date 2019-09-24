@@ -50,7 +50,7 @@
             </StackPanel>
             <StackPanel Margin="486,10,0,179" Width="206">
                 <TextBlock Text="Date*" FontWeight="Light" FontFamily="helvetica" FontSize="20" Padding="3" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Stretch" Height="32"/>
-                <DatePicker Name="DatePicker" Height="30" SelectedDateFormat="Long" RenderTransformOrigin="0.5,0.923"></DatePicker>
+                <DatePicker Name="DatePicker" Height="30" SelectedDateFormat="Long" RenderTransformOrigin="0.5,0.923" ></DatePicker>
             </StackPanel>
             <StackPanel Margin="10,108,476,81" Width="206">
                 <TextBlock Text="Adult*" FontWeight="Light" FontFamily="helvetica" FontSize="20" Padding="3" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Stretch" Height="32"/>

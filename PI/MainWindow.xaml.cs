@@ -39,39 +39,43 @@ namespace PI
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if (Login1.Text == "admin" && Password.Password == "admin")
             {
-                string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=testdb;Integrated Security=True";
-                string query = $"SELECT Count(*) from Customer where Login = '{Login1.Text.ToString()}' AND Password = '{Password.Password}'";
-
-
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                Admin adminWindow = new Admin();
+                this.Visibility = Visibility.Hidden;
+                adminWindow.Show();
+            }
+            else
+            {
+                try
                 {
-                    connection.Open();
-                    SqlCommand command = new SqlCommand(query, connection);
-                    object count = command.ExecuteScalar();
-                    if ((int)count == 1)
+                    string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=testdb;Integrated Security=True";
+                    string query = $"SELECT Count(*) from Customer where Login = '{Login1.Text.ToString()}' AND Password = '{Password.Password}'";
+
+
+                    using (SqlConnection connection = new SqlConnection(connectionString))
                     {
-                        Menu menuWindow = new Menu(Login1.Text.ToString());
-                        this.Visibility = Visibility.Hidden;
-                        menuWindow.Show();
+                        connection.Open();
+                        SqlCommand command = new SqlCommand(query, connection);
+                        object count = command.ExecuteScalar();
+                        if ((int)count == 1)
+                        {
+                            Menu menuWindow = new Menu(Login1.Text.ToString());
+                            this.Visibility = Visibility.Hidden;
+                            menuWindow.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Wrong login or password");
+                        }
+                        connection.Close();
                     }
-                    else
-                    {
-                        MessageBox.Show("Wrong login or password");
-                    }
-                    connection.Close();
+                }
+                catch (Exception ee)
+                {
+                    MessageBox.Show(ee.Message);
                 }
             }
-            catch (Exception ee)
-            {
-                MessageBox.Show(ee.Message);
-            }
-        }
-
-        private void CloseProgram_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            Application.Current.Shutdown();
         }
 
         private void Registation_Click(object sender, RoutedEventArgs e)
@@ -79,6 +83,11 @@ namespace PI
             Registration registrationWindow = new Registration();
             this.Visibility = Visibility.Hidden;
             registrationWindow.Show();
+        }
+
+        private void ExitButton_Click_1(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

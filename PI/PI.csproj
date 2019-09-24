@@ -73,8 +73,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddAirport.xaml.cs">
+      <DependentUpon>AddAirport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddFlight.xaml.cs">
+      <DependentUpon>AddFlight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.xaml.cs">
+      <DependentUpon>Admin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Cabinet.xaml.cs">
       <DependentUpon>Cabinet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeFlight.xaml.cs">
+      <DependentUpon>ChangeFlight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteFlight.xaml.cs">
+      <DependentUpon>DeleteFlight.xaml</DependentUpon>
     </Compile>
     <Compile Include="FindPage.xaml.cs">
       <DependentUpon>FindPage.xaml</DependentUpon>
@@ -88,11 +103,31 @@
     <Compile Include="Schedule.xaml.cs">
       <DependentUpon>Schedule.xaml</DependentUpon>
     </Compile>
+    <Page Include="AddAirport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddFlight.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ButtonTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Cabinet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChangeFlight.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DeleteFlight.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

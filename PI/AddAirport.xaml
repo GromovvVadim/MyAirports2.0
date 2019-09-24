@@ -1,0 +1,132 @@
+﻿<Page x:Class="PI.AddAirport"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PI"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="700"
+      Title="AddAirport">
+    <Page.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Helvetica"/>
+            <Setter Property="FontWeight" Value="Light"/>
+
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="20"
+                                                                      BorderThickness="2"
+                                                                      BorderBrush="White">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Opacity" Value="0.4"/>
+                    <Setter Property="Foreground" Value="DeepSkyBlue"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+    <Grid Name ="dsadasdas" Margin="0,0,0,0">
+        <Grid.Background>
+            <LinearGradientBrush>
+                <GradientStop Color="#7be9f6" Offset="0.0"/>
+                <GradientStop Color="#f083da" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <StackPanel Orientation="Vertical" Margin="0,0,0,343">
+            <Label FontFamily="Helvetica"
+                   FontWeight="Light" 
+                   Foreground="Black"
+                   
+                   FontSize="20"
+                   Background="Transparent"
+                   Content="Назва міста:" Margin="220,30,229,0"
+                   />
+            <TextBox FontFamily="Helvetica"
+                            FontWeight="Light"
+                            x:Name="AddCityBox"
+                            FontSize="20"
+                            Foreground="White"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            HorizontalContentAlignment="Left"
+                            Opacity="0.5"
+                            Height="38" Margin="220,0,229,0" RenderTransformOrigin="0.151,2.141"/>
+            <Border
+                       Height="2"
+                       Background="White"
+                       Opacity="0.5" Margin="220,0,229,0"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Margin="-10,117,10,226">
+            <Label FontFamily="Helvetica"
+                   FontWeight="Light" 
+                   Foreground="Black"
+                   HorizontalAlignment="Right"
+                   FontSize="20"
+                   Background="Transparent"
+                   Content="Назва країни:" Margin="0,30,225,0" Width="246"
+                   />
+            <TextBox FontFamily="Helvetica"
+                            FontWeight="Light"
+                            x:Name="AddCountryBox"
+                            FontSize="20"
+                            Foreground="White"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            HorizontalContentAlignment="Left"
+                            Opacity="0.5"
+                            Height="38" Margin="229,0" RenderTransformOrigin="0.151,2.141"/>
+            <Border
+                       Height="2"
+                       Background="White"
+                       Opacity="0.5" Margin="229,0"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Margin="-10,234,10,109">
+            <Label FontFamily="Helvetica"
+                   FontWeight="Light" 
+                   Foreground="Black"
+                   HorizontalAlignment="Center"
+                   FontSize="20"
+                   Background="Transparent"
+                   Content="Назва ИАТА:" Margin="226,30,225,0" Width="249"
+                   />
+            <TextBox FontFamily="Helvetica"
+                            FontWeight="Light"
+                            x:Name="AddIATABox"
+                            FontSize="20"
+                            Foreground="White"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            HorizontalContentAlignment="Left"
+                            Opacity="0.5"
+                            Height="38" Margin="229,0,229,0" RenderTransformOrigin="0.151,2.141"/>
+            <Border Width="250"
+                       Height="2"
+                       Background="White"
+                       Opacity="0.5"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Margin="0,391,0,-19">
+            <Button Height="76" 
+                    Margin="206,0,222,0"
+                    Name="ConfimAddAirport"
+                    Click="ConfimAddAirport_Click"
+                    Content="Додати Аеропорт"
+                    FontSize="20"
+                    FontFamily="Helvetica"
+                    FontWeight="Light" 
+                    Foreground="Black"
+                    HorizontalAlignment="Center" Width="272" RenderTransformOrigin="0.5,0.5" >
+            </Button>
+        </StackPanel>
+    </Grid>
+</Page>
