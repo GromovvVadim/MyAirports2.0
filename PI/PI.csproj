@@ -73,6 +73,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddAirplane.xaml.cs">
+      <DependentUpon>AddAirplane.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddAirport.xaml.cs">
       <DependentUpon>AddAirport.xaml</DependentUpon>
     </Compile>
@@ -103,6 +106,10 @@
     <Compile Include="Schedule.xaml.cs">
       <DependentUpon>Schedule.xaml</DependentUpon>
     </Compile>
+    <Page Include="AddAirplane.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AddAirport.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

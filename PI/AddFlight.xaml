@@ -59,7 +59,7 @@
                 Name="DepartCityComboBox" 
                 IsSynchronizedWithCurrentItem="True"/>
         </StackPanel>
-        <StackPanel Orientation="Vertical" Margin="0,95,380,310">
+        <StackPanel Orientation="Vertical" Margin="0,69,380,336">
             <Label FontFamily="Helvetica"
                    FontWeight="Light" 
                    Foreground="Black" 
@@ -70,7 +70,7 @@
                 Name="DepartDate"
                 Margin="78,0,60,0"/>
         </StackPanel>
-        <StackPanel Orientation="Vertical" Margin="0,195,380,186">
+        <StackPanel Orientation="Vertical" Margin="0,142,380,239">
             <Label FontFamily="Helvetica"
                    FontWeight="Light" 
                    Foreground="Black" 
@@ -106,7 +106,7 @@
                 SelectionChanged="ComboBox_SelectionChanged"
                 Name="ArrivalCityComboBox" IsSynchronizedWithCurrentItem="True"/>
         </StackPanel>
-        <StackPanel Orientation="Vertical" Margin="350,95,30,310">
+        <StackPanel Orientation="Vertical" Margin="350,69,30,336">
             <Label FontFamily="Helvetica"
                    FontWeight="Light" 
                    Foreground="Black" 
@@ -117,7 +117,7 @@
                 Name="ArrivalDate"
                 Margin="78,0,60,0"/>
         </StackPanel>
-        <StackPanel Orientation="Vertical" Margin="350,195,30,186">
+        <StackPanel Orientation="Vertical" Margin="350,142,30,239">
             <Label FontFamily="Helvetica"
                    FontWeight="Light" 
                    Foreground="Black" 
@@ -139,68 +139,6 @@
                     Name="ArrivalTimeComboBox" IsSynchronizedWithCurrentItem="True"/>
             </StackPanel>
         </StackPanel>
-        <StackPanel Orientation="Vertical" Margin="-3,311,391,67" RenderTransformOrigin="0.5,0.5">
-            <StackPanel.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleY="-0.254"/>
-                    <RotateTransform/>
-                    <TranslateTransform Y="-0.746"/>
-                </TransformGroup>
-            </StackPanel.RenderTransform>
-            <Label FontFamily="Helvetica"
-                   FontWeight="Light" 
-                   Foreground="Black" 
-                   FontSize="20"
-                   Background="Transparent"
-                   Content="Econom class:" Margin="80,0,60,0"/>
-            <TextBlock FontFamily="Helvetica"
-                   FontWeight="Light" 
-                   Foreground="Black" 
-                   FontSize="20"
-                   Background="Transparent"
-                   Margin="80,0,173,0"/>
-            <Border
-                       Height="2"
-                       Background="White"
-                       Opacity="0.5" Margin="80,0,173,0"/>
-        </StackPanel>
-        <StackPanel Orientation="Vertical" Margin="191,309,197,69" RenderTransformOrigin="0.5,0.5">
-            <Label FontFamily="Helvetica"
-                FontWeight="Light" 
-                Foreground="Black" 
-                FontSize="20"
-                Background="Transparent"
-                Content="Business class:" Margin="80,0,60,0"/>
-            <TextBlock FontFamily="Helvetica"
-                FontWeight="Light" 
-                Foreground="Black" 
-                FontSize="20"
-                Background="Transparent"
-                Margin="80,0,173,0"/>
-            <Border
-                Height="2"
-                Background="White"
-                Opacity="0.5" Margin="80,0,173,0"/>
-        </StackPanel>
-        <StackPanel Orientation="Vertical" Margin="403,310,13,68" RenderTransformOrigin="0.5,0.5">
-            <Label FontFamily="Helvetica"
-                FontWeight="Light" 
-                Foreground="Black" 
-                FontSize="20"
-                Background="Transparent"
-                Content="First class:" Margin="80,0,60,0"/>
-            <TextBlock FontFamily="Helvetica"
-                FontWeight="Light" 
-                Foreground="Black" 
-                FontSize="20"
-                Background="Transparent"
-                Margin="80,0,173,0"/>
-            <Border
-                Height="2"
-                Background="White"
-                Opacity="0.5" Margin="80,0,152,0"/>
-        </StackPanel>
         <Button Height="76" 
                     Margin="204,388,224,36"
                     Name="ConfimAddFlight"
@@ -212,5 +150,19 @@
                     Foreground="Black"
                     HorizontalAlignment="Center" Width="272" RenderTransformOrigin="0.5,0.5" >
         </Button>
+        <StackPanel Orientation="Vertical" Margin="0,229,380,181">
+            <Label FontFamily="Helvetica"
+                FontWeight="Light" 
+                Foreground="Black" 
+                FontSize="20"
+                Background="Transparent"
+                Content="Aiplane's id:" Margin="78,30,60,0"/>
+            <ComboBox 
+                HorizontalAlignment="Left" 
+                Width="182" 
+                Margin="78,0,0,0"
+                x:Name="AiplaneIdComboBox" 
+                IsSynchronizedWithCurrentItem="True"/>
+        </StackPanel>
     </Grid>
 </Page>

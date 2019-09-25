@@ -52,9 +52,17 @@ namespace PI
                     {
                         DepartCityComboBox.Items.Add(dr["City"]);
                         ArrivalCityComboBox.Items.Add(dr["City"]);
-                    }
-                    con.Close();
 
+                    }
+                    dr.Close();
+                    cmd.CommandText = "SELECT * FROM Airplane";
+                    SqlDataReader dr1 = cmd.ExecuteReader();
+                    while (dr1.Read())
+                    {
+                        AiplaneIdComboBox.Items.Add(dr1["Id"]);
+                    }
+                    dr1.Close();
+                    con.Close();
                 }
             }
             catch (Exception ex)

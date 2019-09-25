@@ -54,5 +54,10 @@ namespace PI
         {
             Main.Content = new AddFlight();
         }
+
+        private void AddAirplaneButton_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new AddAirplane();
+        }
     }
 }

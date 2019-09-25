@@ -61,7 +61,7 @@
                             BorderThickness="0"
                             HorizontalContentAlignment="Left"
                             Opacity="0.5"
-                            Height="38" Margin="220,0,229,0" RenderTransformOrigin="0.151,2.141"/>
+                            Height="30" Margin="220,0,229,0" RenderTransformOrigin="0.151,2.141"/>
             <Border
                        Height="2"
                        Background="White"
@@ -85,7 +85,7 @@
                             BorderThickness="0"
                             HorizontalContentAlignment="Left"
                             Opacity="0.5"
-                            Height="38" Margin="229,0" RenderTransformOrigin="0.151,2.141"/>
+                            Height="30" Margin="229,0" RenderTransformOrigin="0.151,2.141"/>
             <Border
                        Height="2"
                        Background="White"
@@ -109,7 +109,7 @@
                             BorderThickness="0"
                             HorizontalContentAlignment="Left"
                             Opacity="0.5"
-                            Height="38" Margin="229,0,229,0" RenderTransformOrigin="0.151,2.141"/>
+                            Height="30" Margin="229,0,229,0" RenderTransformOrigin="0.151,2.141"/>
             <Border Width="250"
                        Height="2"
                        Background="White"

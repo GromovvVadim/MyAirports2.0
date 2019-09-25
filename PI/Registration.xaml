@@ -45,12 +45,17 @@
                     <GradientStop Color="#f083da" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
-            <Label x:Name="CloseProgram" 
-                       FontFamily="Helvetica"
-                       MouseLeftButtonUp="CloseProgram_MouseLeftButtonUp"
-                       Content="X" 
-                       Foreground="White"
-                       Margin="348,0,0,411" FontSize="24"/>
+            <Button Content="X" 
+                        Name="ExitButton" 
+                        Click="ExitButton_Click" 
+                        HorizontalAlignment="Left" 
+                        VerticalAlignment="Top" 
+                        Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" 
+                        Width="25" 
+                        FontSize="18"
+                        FontWeight="Bold"
+                        Margin="355,0,0,0" 
+                        Height="31"/>
         </Border>
         <Image Source="Photos/airplane.png" Width="80" Margin="155,10,145,346"/>
         <TextBlock Text="Registration"
@@ -59,33 +64,30 @@
                           FontSize="22"
                           Foreground="White"
                           HorizontalAlignment="Center" Margin="131,98,123,311"/>
-        <TextBlock
+        <StackPanel Orientation="Horizontal" Margin="0,139,0,218">
+
+            <Label
                  FontFamily="Helvetica"
                  FontWeight="Bold"
-                 Text="Ім'я:"
+                 Content="Логін:"
                  FontSize="20"
-                 Foreground="White"
+                 Foreground="Black"
                  Background="Transparent"
                 
                  Opacity="0.5"
-                 Height="25"
-                 Margin="68,169,77,256" TextDecorations="Underline">
-        </TextBlock>
-
-        <TextBox FontFamily="Helvetica"
-                 FontWeight="Light"
-                 Text="Username"
-                 FontSize="20"
-                 Foreground="White"
-                 Background="Transparent"
-                 BorderThickness="0"
-                 HorizontalContentAlignment="Left"
-                 Opacity="0.5"
-                 Height="25"
-                 Margin="143,169,39,256"/>
-        <Border
-                       Height="2"
-                       Background="White"
-                       Opacity="0.5" Margin="143,200,39,256"/>
+                 Margin="68,26,237,32" RenderTransformOrigin="0.5,0.5"/>
+            <TextBox Width="152" Margin="-250,26,0,32"
+                     FontFamily="Helvetica"
+                            FontWeight="Light"
+                            Name="Login1"
+                            FontSize="20"
+                            HorizontalAlignment="Center"
+                            Foreground="White"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            HorizontalContentAlignment="Left"
+                            Opacity="0.5"/>
+            
+        </StackPanel>
     </Grid>
 </Window>
