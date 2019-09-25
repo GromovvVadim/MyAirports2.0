@@ -64,7 +64,7 @@
                           FontSize="22"
                           Foreground="White"
                           HorizontalAlignment="Center" Margin="131,98,123,311"/>
-        <StackPanel Orientation="Horizontal" Margin="0,139,0,218">
+        <StackPanel Orientation="Horizontal" Margin="0,139,0,238">
 
             <Label
                  FontFamily="Helvetica"
@@ -75,19 +75,61 @@
                  Background="Transparent"
                 
                  Opacity="0.5"
-                 Margin="68,26,237,32" RenderTransformOrigin="0.5,0.5"/>
-            <TextBox Width="152" Margin="-250,26,0,32"
+                 Margin="68,10,237,32" RenderTransformOrigin="0.5,0.5" Width="73"/>
+            <TextBox Width="164" Margin="-250,10,0,32"
                      FontFamily="Helvetica"
                             FontWeight="Light"
-                            Name="Login1"
+                            Name="LoginBlock"
                             FontSize="20"
                             HorizontalAlignment="Center"
                             Foreground="White"
-                            Background="Transparent"
-                            BorderThickness="0"
-                            HorizontalContentAlignment="Left"
+                            Background="Transparent" 
                             Opacity="0.5"/>
-            
+
         </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="1,198,-1,175" RenderTransformOrigin="0.5,0.5">
+
+            <Label
+                FontFamily="Helvetica"
+                FontWeight="Bold"
+                Content="Пароль:"
+                FontSize="20"
+                Foreground="Black"
+                Background="Transparent"
+                Opacity="0.5"
+                Margin="68,10,237,32" RenderTransformOrigin="0.5,0.5" Width="87"/>
+            <PasswordBox Width="164" Margin="-250,10,0,32"
+                FontFamily="Helvetica"
+                FontWeight="Light"
+                x:Name="PasswordBox"
+                FontSize="20"
+                HorizontalAlignment="Center"
+                Foreground="White"
+                Background="Transparent" 
+                Opacity="0.5"/>
+
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="1,249,-1,123" RenderTransformOrigin="0.5,0.5">
+            <Label
+                FontFamily="Helvetica"
+                FontWeight="Bold"
+                Content="Пошта:"
+                FontSize="20"
+                Foreground="Black"
+                Background="Transparent"
+                Opacity="0.5"
+                Margin="68,10,237,32" RenderTransformOrigin="0.5,0.5"/>
+            <TextBox Width="164" 
+                       Margin="-250,10,0,32"
+                       FontFamily="Helvetica"
+                       FontWeight="Light"
+                       Name="EmailBlock"
+                       FontSize="20"
+                       HorizontalAlignment="Center"
+                       Foreground="White"
+                       Background="Transparent" 
+                       Opacity="0.5"/>
+        </StackPanel>
+        <Button Name="RegistationButton" Click="RegistationButton_Click" Height="40" Content="Зареєструватися" Margin="131,357,123,53"/>
     </Grid>
 </Window>
