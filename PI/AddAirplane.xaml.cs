@@ -34,8 +34,9 @@ namespace PI
             {
                 try
                 {
-                    string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=testdb;Integrated Security=True";
-                    string query = $"INSERT INTO Airplane (Id,Model,Econom,Business,First) VALUES ('{AddAirplaneID.Text}', '{AddAirplaneName.Text}', '{EconomClass.Text}', '{BusinessClass.Text}', '{FirstClass.Text}');";
+                    string connectionString = ConfigurationManager.ConnectionStrings["MainConnection"].ConnectionString;
+                    string query = $"INSERT INTO Airplane (Id,Model,Econom,Business,First) " +
+                        $"VALUES ('{AddAirplaneID.Text}', '{AddAirplaneName.Text}', '{EconomClass.Text}', '{BusinessClass.Text}', '{FirstClass.Text}');";
 
 
                     using (SqlConnection connection = new SqlConnection(connectionString))

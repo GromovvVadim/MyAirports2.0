@@ -49,7 +49,7 @@ namespace PI
             {
                 try
                 {
-                    string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=testdb;Integrated Security=True";
+                    string connectionString = ConfigurationManager.ConnectionStrings["MainConnection"].ConnectionString;
                     string query = $"SELECT Count(*) from Customer where Login = '{Login1.Text.ToString()}' AND Password = '{Password.Password}'";
 
 

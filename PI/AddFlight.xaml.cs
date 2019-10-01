@@ -37,7 +37,7 @@ namespace PI
         {
             DepartCityComboBox.Items.Clear();
             ArrivalCityComboBox.Items.Clear();
-            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=testdb;Integrated Security=True";
+            string connectionString = ConfigurationManager.ConnectionStrings["MainConnection"].ConnectionString;
             try
             {
                 using (SqlConnection con = new SqlConnection(connectionString))
@@ -75,44 +75,44 @@ namespace PI
         {
             
             UpdateItems();
-            if(DepartMinutsComboBox.Items.Count == 0)
-            {
-                for (int i = 0; i < 60; i++)
-                {
-                    if (i.ToString().Length == 1)
-                    {
-                        ArrivalHourComboBox.Items.Add("0" + i.ToString());
-                        DepartHourComboBox.Items.Add("0" + i.ToString());
-                    }
-                    else
-                    {
-                        DepartMinutsComboBox.Items.Add(i.ToString());
-                        ArrivalMinutsComboBox.Items.Add(i.ToString());
-                    }
-                }
-                ArrivalTimeComboBox.Items.Add("AM");
-                ArrivalTimeComboBox.Items.Add("PM");
-                DepartTimeComboBox.Items.Add("AM");
-                DepartTimeComboBox.Items.Add("PM");
-            }
-            for (int i = 0; i < 13; i++)
-            {
-                if(i.ToString().Length == 1)
-                {
-                    ArrivalHourComboBox.Items.Add("0" + i.ToString());
-                    DepartHourComboBox.Items.Add("0" + i.ToString());
-                }
-                else
-                {
-                    ArrivalHourComboBox.Items.Add(i.ToString());
-                    DepartHourComboBox.Items.Add(i.ToString());
-                }
-            }
+            
         }
 
         private void ConfimAddFlight_Click(object sender, RoutedEventArgs e)
         {
-
+            if (DepartCityComboBox.Text != "" && ArrivalCityComboBox.Text != "" && DepartDate.Text != "" && ArrivalDate.Text != "" &&
+                DepartTimePicker.Text != "" && ArrivalTimePicker.Text != "" && AiplaneIdComboBox.Text != "" && AirlineBox.Text != "")
+            {
+                try
+                {
+                    string connectionString = ConfigurationManager.ConnectionStrings["MainConnection"].ConnectionString;
+                    string query = $"INSERT INTO Flight (DepartCity,ArriveCity,DepartDate,ArriveDate,DepartTime,ArriveTime,AirplaneID,Airline) " +
+                        $"VALUES ('{DepartCityComboBox.Text}','{ArrivalCityComboBox.Text}','{DepartDate.Text}','{ArrivalDate.Text}','{DepartTimePicker.Text}','{ArrivalTimePicker.Text}','{AiplaneIdComboBox.Text}','{AirlineBox.Text}')";
+                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    {
+                        connection.Open();
+                        SqlCommand command = new SqlCommand(query, connection);
+                        command.ExecuteNonQuery();
+                        connection.Close();
+                    }
+                    AirlineBox.Clear();
+                    DepartCityComboBox.Text = "";
+                    ArrivalCityComboBox.Text = "";
+                    DepartDate.Text = "";
+                    ArrivalDate.Text = "";
+                    DepartTimePicker.Text = "";
+                    ArrivalTimePicker.Text = "";
+                    AiplaneIdComboBox.Text = "";
+                }
+                catch (Exception ee)
+                {
+                    MessageBox.Show(ee.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Something wrong");
+            }
         }
     }
 }

@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.Data;
 
 namespace PI
 {
@@ -23,6 +26,30 @@ namespace PI
         public Schedule()
         {
             InitializeComponent();
+        }
+
+        private void FindButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(FindDatePicker.Text != null)
+            {
+                try
+                {
+                    string connectionString = ConfigurationManager.ConnectionStrings["MainConnection"].ConnectionString;
+                    string query = $"SELECT * FROM Flight";
+                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    {
+                        connection.Open();
+                        SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                        DataSet ds = new DataSet();
+                        adapter.Fill(ds);
+                        FindDataGrid.ItemsSource = ds.Tables[0].DefaultView;
+                    }
+                }
+                catch (Exception ee)
+                {
+                    MessageBox.Show(ee.Message);
+                }
+            }
         }
     }
 }

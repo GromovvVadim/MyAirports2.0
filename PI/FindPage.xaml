@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:PI"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="FindPage">
+      Title="FindPage"
+      Loaded="Page_Loaded">
 
     <Grid Name="FindPanel" HorizontalAlignment="Left" Margin="-5,-5,0,0" Width="705" >
         <Grid.RowDefinitions>

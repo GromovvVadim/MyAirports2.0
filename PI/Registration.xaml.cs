@@ -49,7 +49,7 @@ namespace PI
             {
                 try
                 {
-                    string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=testdb;Integrated Security=True";
+                    string connectionString = ConfigurationManager.ConnectionStrings["MainConnection"].ConnectionString;
                     string query = $"INSERT INTO Customer (Login,Password,Email) VALUES ('{LoginBlock.Text}', '{PasswordBox.Password}', '{EmailBlock.Text}');";
 
 

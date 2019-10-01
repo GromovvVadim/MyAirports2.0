@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.Data;
 
 namespace PI
 {
@@ -23,6 +26,37 @@ namespace PI
         public FindPage()
         {
             InitializeComponent();
+
+        }
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            DepartAirport.Items.Clear();
+            ArrivalAirport.Items.Clear();
+            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=testdb;Integrated Security=True";
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    con.Open();
+                    cmd.Connection = con;
+                    cmd.CommandText = "SELECT * FROM Airport";
+                    SqlDataReader dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        DepartAirport.Items.Add(dr["City"]);
+                        ArrivalAirport.Items.Add(dr["City"]);
+
+                    }
+                    dr.Close();
+                    con.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

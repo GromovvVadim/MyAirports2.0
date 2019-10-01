@@ -5,18 +5,51 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PI"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="500" d:DesignWidth="700"
       Title="DeleteFlight">
 
-    <Grid Name ="dsadasdas" Margin="-5,-5,0,0">
+    <Page.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Helvetica"/>
+            <Setter Property="FontWeight" Value="Light"/>
+
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="20"
+                                                                      BorderThickness="2"
+                                                                      BorderBrush="White">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Opacity" Value="0.4"/>
+                    <Setter Property="Foreground" Value="DeepSkyBlue"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+    <Grid>
         <Grid.Background>
             <LinearGradientBrush>
                 <GradientStop Color="#7be9f6" Offset="0.0"/>
                 <GradientStop Color="#f083da" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <TextBlock Text="Delete Flight" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32">
-
-        </TextBlock>
+        <StackPanel>
+            <DataGrid Height="350" Margin="25,40,25,5" Name="DeleteDateGrid"/>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,0" Height="100">
+                <Button Height="70" Margin="80,15,0,15" Name="UpdateButton" Content="Update" Click="UpdateButton_Click" Width="140" FontSize="20" Foreground="Black" FontFamily="Helvetica"/>
+                <Button Height="70" Margin="250,15,0,15" Name="ConfirmDeleteFlightButton" Content="Delete Flight" Click="ConfirmDeleteFlightButton_Click" Width="140" Foreground="Black" FontSize="20" FontFamily="Helvetica"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>

@@ -35,7 +35,7 @@ namespace PI
             {
                 try
                 {
-                    string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=testdb;Integrated Security=True";
+                    string connectionString = ConfigurationManager.ConnectionStrings["MainConnection"].ConnectionString;
                     string query = $"INSERT INTO Airport (city,country,IATA) VALUES ('{AddCityBox.Text}', '{AddCountryBox.Text}', '{AddIATABox.Text}');";
 
 
