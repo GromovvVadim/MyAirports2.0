@@ -9,36 +9,8 @@
       d:DesignHeight="500" d:DesignWidth="700"
       Title="AddFlight"
       Loaded="Page_Loaded">
-    <Page.Resources>
-        <Style TargetType="{x:Type Button}">
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontFamily" Value="Helvetica"/>
-            <Setter Property="FontWeight" Value="Light"/>
-
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border Background="{TemplateBinding Background}" CornerRadius="20"
-                                                                      BorderThickness="2"
-                                                                      BorderBrush="White">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="White"/>
-                    <Setter Property="Opacity" Value="0.4"/>
-                    <Setter Property="Foreground" Value="DeepSkyBlue"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-    </Page.Resources>
-    <Grid Margin="0,0,0,0">
+    
+    <Grid>
         <Grid.Background>
             <LinearGradientBrush>
                 <GradientStop Color="#7be9f6" Offset="0.0"/>
