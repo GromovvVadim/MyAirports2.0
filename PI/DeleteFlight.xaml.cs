@@ -33,7 +33,8 @@ namespace PI
             try
             {
                 string connectionString = ConfigurationManager.ConnectionStrings["MainConnection"].ConnectionString;
-                string query = "SELECT * FROM FLIGHT";
+                string query = "SELECT Id,DepartCity as 'Depart City',ArriveCity as 'Arrive City',convert(varchar(10),DepartDate,104) as 'Depart Time'," +
+                    "convert(varchar(10),ArriveDate,104) as 'Arrival Date',CAST(DepartTime AS CHAR(5)) as 'Depart Time',CAST(ArriveTime AS CHAR(5)) as 'Arrive Time',AirplaneID as 'Airplane Id',Airline FROM FLIGHT";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();

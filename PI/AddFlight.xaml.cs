@@ -88,7 +88,7 @@ namespace PI
                     MessageBox.Show(DepartDate.Text);
                     string connectionString = ConfigurationManager.ConnectionStrings["MainConnection"].ConnectionString;
                     string query = $"INSERT INTO Flight (DepartCity,ArriveCity,DepartDate,ArriveDate,DepartTime,ArriveTime,AirplaneID,Airline) " +
-                        $"VALUES ('{DepartCityComboBox.Text}','{ArrivalCityComboBox.Text}','{DepartDate.Text}','{ArrivalDate.Text}','{DepartTimePicker.Text}','{ArrivalTimePicker.Text}','{AiplaneIdComboBox.Text}','{AirlineBox.Text}')";
+                        $"VALUES ('{DepartCityComboBox.Text}','{ArrivalCityComboBox.Text}',CONVERT(date, '{DepartDate.Text}', 104),CONVERT(date, '{ArrivalDate.Text}', 104),'{DepartTimePicker.Text}','{ArrivalTimePicker.Text}','{AiplaneIdComboBox.Text}','{AirlineBox.Text}')";
                     using (SqlConnection connection = new SqlConnection(connectionString))
                     {
                         connection.Open();

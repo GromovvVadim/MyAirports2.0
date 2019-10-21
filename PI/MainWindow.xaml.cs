@@ -39,7 +39,7 @@ namespace PI
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-            if (Login1.Text == "admin" && Password.Password == "admin")
+            if (Login1.Text == "" && Password.Password == "")
             {
                 Admin adminWindow = new Admin();
                 this.Visibility = Visibility.Hidden;
