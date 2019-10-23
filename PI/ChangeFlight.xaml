@@ -5,18 +5,22 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PI"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="500" d:DesignWidth="700"
       Title="ChangeFlight">
 
-    <Grid Name ="dsadasdas" Margin="-5,-5,0,0">
+    <Grid>
         <Grid.Background>
             <LinearGradientBrush>
                 <GradientStop Color="#7be9f6" Offset="0.0"/>
                 <GradientStop Color="#f083da" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <TextBlock Text="Change Flight" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32">
-
-        </TextBlock>
+        <StackPanel>
+            <DataGrid Height="350" Margin="25,40,25,5" Name="DeleteDateGrid"/>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,0" Height="100">
+                <Button Height="70" Margin="80,15,0,15" Name="UpdateButton" Content="Оновити" Click="UpdateButton_Click" Width="140" FontSize="20" Foreground="Black" FontFamily="Helvetica"/>
+                <Button Height="70" Margin="250,15,0,15" Name="ChangeFlightButton" Content="Змінити" Click="ChangeFlightButton_Click" Width="140" Foreground="Black" FontSize="20" FontFamily="Helvetica"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>

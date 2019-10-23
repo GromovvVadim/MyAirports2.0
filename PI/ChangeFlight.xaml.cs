@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.Data;
 
 namespace PI
 {
@@ -23,6 +26,58 @@ namespace PI
         public ChangeFlight()
         {
             InitializeComponent();
+        }
+
+        private void ChangeFlightButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (DeleteDateGrid.SelectedItem != null)
+            {
+                try
+                {
+                    DataRowView row = DeleteDateGrid.SelectedItem as DataRowView;
+                    string connectionString = ConfigurationManager.ConnectionStrings["MainConnection"].ConnectionString;
+                    string query = $"Update Flight " +
+                        $"Set DepartDate = CONVERT(date, '{row.Row.ItemArray[3].ToString()}', 104), " +
+                        $"ArriveDate = CONVERT(date, '{row.Row.ItemArray[4].ToString()}', 104), " +
+                        $"DepartTime = '{row.Row.ItemArray[5].ToString()}'," +
+                        $"ArriveTime = '{row.Row.ItemArray[6].ToString()}' " +
+                        $"Where Id = {row.Row.ItemArray[0].ToString()}";
+                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    {
+                        connection.Open();
+                        SqlCommand command = new SqlCommand(query, connection);
+                        command.ExecuteNonQuery();
+                        connection.Close();
+                    }
+                    UpdateButton_Click(sender, e);
+                }
+                catch (Exception ee)
+                {
+                    MessageBox.Show(ee.Message);
+                }
+            }
+        }
+
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["MainConnection"].ConnectionString;
+                string query = "SELECT Id,DepartCity as 'Depart City',ArriveCity as 'Arrive City',convert(varchar(10),DepartDate,104) as 'Depart Date'," +
+                    "convert(varchar(10),ArriveDate,104) as 'Arrival Date',CAST(DepartTime AS CHAR(5)) as 'Depart Time',CAST(ArriveTime AS CHAR(5)) as 'Arrive Time',AirplaneID as 'Airplane Id',Airline FROM FLIGHT";
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                    DataSet ds = new DataSet();
+                    adapter.Fill(ds);
+                    DeleteDateGrid.ItemsSource = ds.Tables[0].DefaultView;
+                }
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show(ee.Message);
+            }
         }
     }
 }
