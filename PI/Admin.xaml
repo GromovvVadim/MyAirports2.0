@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="Menu" Height="500" Width="900"
         WindowStyle="None" ResizeMode="NoResize"
-        MouseDown="Window_MouseDown">
+        MouseDown="Window_MouseDown"
+        Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>

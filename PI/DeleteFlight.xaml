@@ -18,8 +18,8 @@
         <StackPanel>
             <DataGrid Height="350" Margin="25,40,25,5" Name="DeleteDateGrid"/>
             <StackPanel Orientation="Horizontal" Margin="0,0,0,0" Height="100">
-                <Button Height="70" Margin="80,15,0,15" Name="UpdateButton" Content="Update" Click="UpdateButton_Click" Width="140" FontSize="20" Foreground="Black" FontFamily="Helvetica"/>
-                <Button Height="70" Margin="250,15,0,15" Name="ConfirmDeleteFlightButton" Content="Delete Flight" Click="ConfirmDeleteFlightButton_Click" Width="140" Foreground="Black" FontSize="20" FontFamily="Helvetica"/>
+                <Button Height="70" Margin="80,15,0,15" Name="UpdateButton" Content="Оновити" Click="UpdateButton_Click" Width="140" FontSize="20" Foreground="Black" FontFamily="Helvetica"/>
+                <Button Height="70" Margin="250,15,0,15" Name="ConfirmDeleteFlightButton" Content="Видалити" Click="ConfirmDeleteFlightButton_Click" Width="140" Foreground="Black" FontSize="20" FontFamily="Helvetica"/>
             </StackPanel>
         </StackPanel>
     </Grid>

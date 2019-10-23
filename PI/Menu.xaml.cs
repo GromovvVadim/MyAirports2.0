@@ -44,7 +44,7 @@ namespace PI
 
         private void CabinetButton_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new Cabinet();
+            Main.Content = new Cabinet(Login);
         }
 
         private void ScheduleButton_Click(object sender, RoutedEventArgs e)
@@ -59,6 +59,11 @@ namespace PI
         private void MyTicketsButton_Click(object sender, RoutedEventArgs e)
         {
             Main.Content = new MyTickets();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new FindPage();
         }
     }
 }
