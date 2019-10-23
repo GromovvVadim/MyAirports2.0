@@ -5,18 +5,240 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PI"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="500" d:DesignWidth="700"
       Title="Cabinet">
 
-    <Grid Name ="dsadasdas" Margin="-5,-5,0,0">
+    <Grid Margin="-5,-5,0,0">
         <Grid.Background>
             <LinearGradientBrush>
                 <GradientStop Color="#7be9f6" Offset="0.0"/>
                 <GradientStop Color="#f083da" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <TextBlock Text="Cabinet" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32">
+        <StackPanel HorizontalAlignment="Left" Height="500" VerticalAlignment="Top" Width="350">
+            <Label
+                HorizontalContentAlignment="Center"
+                FontFamily="Helvetica"
+                FontWeight="Bold"
+                Content="Змінити пароль"
+                FontSize="26"
+                Foreground="Black"
+                Background="Transparent"
+                Margin="0,75,0,25">
+            </Label>
+            <StackPanel Orientation="Vertical" Height="200">
+                <StackPanel Orientation="Vertical">
+                    <Label
+                        HorizontalContentAlignment="Center"
+                        FontFamily="Helvetica"
+                        Content="Старий пароль"
+                        FontSize="20"
+                        Foreground="Black"
+                        Background="Transparent">
+                    </Label>
+                    <TextBox 
+                        FontFamily="Helvetica"
+                        FontWeight="Light"
+                        Name="Old_Password"
+                        FontSize="20"
+                        HorizontalAlignment="Center"
+                        Foreground="White"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Width="235"
+                        HorizontalContentAlignment="Left"
+                        Opacity="0.5"
+                        Height="25">
+                    </TextBox>
+                    <Border 
+                        Width="250"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5">
+                    </Border>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <Label
+                        HorizontalContentAlignment="Center"
+                        FontFamily="Helvetica"
+                        Content="Новий пароль"
+                        FontSize="20"
+                        Foreground="Black"
+                        Background="Transparent">
+                    </Label>
+                    <TextBox 
+                        FontFamily="Helvetica"
+                        FontWeight="Light"
+                        Name="Password"
+                        FontSize="20"
+                        HorizontalAlignment="Center"
+                        Foreground="White"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Width="235"
+                        HorizontalContentAlignment="Left"
+                        Opacity="0.5"
+                        Height="25">
+                    </TextBox>
+                    <Border 
+                        Width="250"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5">
+                    </Border>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <Label
+                        HorizontalContentAlignment="Center"
+                        FontFamily="Helvetica"
+                        Content="Повторіть новий пароль"
+                        FontSize="20"
+                        Foreground="Black"
+                        Background="Transparent">
+                    </Label>
+                    <TextBox 
+                        FontFamily="Helvetica"
+                        FontWeight="Light"
+                        Name="Password_check"
+                        FontSize="20"
+                        HorizontalAlignment="Center"
+                        Foreground="White"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Width="235"
+                        HorizontalContentAlignment="Left"
+                        Opacity="0.5"
+                        Height="25">
+                    </TextBox>
+                    <Border 
+                        Width="250"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5">
+                    </Border>
+                </StackPanel>
+            </StackPanel>
+            <Button 
+                Name="Password_Button" 
+                Width="100" 
+                Height="40" 
+                Content="Змінити"
+                Margin="60,0,60,0"
+                Foreground="Black" Click="Password_Button_Click">
+            </Button>
+        </StackPanel>
 
-        </TextBlock>
+        <StackPanel HorizontalAlignment="Left" Height="500" VerticalAlignment="Top" Width="355" Margin="350,0,0,0">
+            <Label
+                HorizontalContentAlignment="Center"
+                FontFamily="Helvetica"
+                FontWeight="Bold"
+                Content="Змінити адресу пошти"
+                FontSize="26"
+                Foreground="Black"
+                Background="Transparent"
+                Margin="0,75,0,25">
+            </Label>
+            <StackPanel Orientation="Vertical" Height="200">
+                <StackPanel Orientation="Vertical">
+                    <Label
+                        HorizontalContentAlignment="Center"
+                        FontFamily="Helvetica"
+                        Content="Стара адреса пошти"
+                        FontSize="20"
+                        Foreground="Black"
+                        Background="Transparent">
+                    </Label>
+                    <TextBox 
+                        FontFamily="Helvetica"
+                        FontWeight="Light"
+                        Name="Old_Email"
+                        FontSize="20"
+                        HorizontalAlignment="Center"
+                        Foreground="White"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Width="235"
+                        HorizontalContentAlignment="Left"
+                        Opacity="0.5"
+                        Height="25">
+                    </TextBox>
+                    <Border 
+                        Width="250"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5">
+                    </Border>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <Label
+                        HorizontalContentAlignment="Center"
+                        FontFamily="Helvetica"
+                        Content="Нова адреса пошти"
+                        FontSize="20"
+                        Foreground="Black"
+                        Background="Transparent">
+                    </Label>
+                    <TextBox 
+                        FontFamily="Helvetica"
+                        FontWeight="Light"
+                        Name="Email"
+                        FontSize="20"
+                        HorizontalAlignment="Center"
+                        Foreground="White"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Width="235"
+                        HorizontalContentAlignment="Left"
+                        Opacity="0.5"
+                        Height="25">
+                    </TextBox>
+                    <Border 
+                        Width="250"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5">
+                    </Border>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <Label
+                        HorizontalContentAlignment="Center"
+                        FontFamily="Helvetica"
+                        Content="Повторіть нову адресу пошти"
+                        FontSize="20"
+                        Foreground="Black"
+                        Background="Transparent">
+                    </Label>
+                    <TextBox 
+                        FontFamily="Helvetica"
+                        FontWeight="Light"
+                        Name="Email_check"
+                        FontSize="20"
+                        HorizontalAlignment="Center"
+                        Foreground="White"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Width="235"
+                        HorizontalContentAlignment="Left"
+                        Opacity="0.5"
+                        Height="25">
+                    </TextBox>
+                    <Border 
+                        Width="250"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5">
+                    </Border>
+                </StackPanel>
+            </StackPanel>
+            <Button 
+                Name="Email_Button" 
+                Width="100" 
+                Height="40" 
+                Content="Змінити"
+                Margin="60,0,60,0"
+                Foreground="Black" Click="Email_Button_Click">
+            </Button>
+        </StackPanel>
     </Grid>
 </Page>
