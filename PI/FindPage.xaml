@@ -29,7 +29,7 @@
             <Setter Property="SelectedDateFormat" Value="Long"/>
         </Style>
     </Page.Resources>
-    
+
     <Grid Name="FindPanel" HorizontalAlignment="Left" Margin="-5,-5,0,0" Width="705" >
         <Grid.Background>
             <LinearGradientBrush>
@@ -48,21 +48,50 @@
             </StackPanel>
             <StackPanel Margin="492,10,7,432" Width="206">
                 <TextBlock Text="Date*"/>
-                <DatePicker Name="DatePicker"/>
+                <DatePicker Name="DatePicker" Height="24"/>
             </StackPanel>
             <StackPanel Margin="16,78,483,366" Width="206">
                 <TextBlock Text="Adult*"/>
-                <ComboBox DataContext="1" x:Name="CountAdult"/>
+                <ComboBox DataContext="1" x:Name="CountAdult">
+                    <ComboBoxItem Content="0"/>
+                    <ComboBoxItem Content="1"/>
+                    <ComboBoxItem Content="2"/>
+                    <ComboBoxItem Content="3"/>
+                    <ComboBoxItem Content="4"/>
+                    <ComboBoxItem Content="5"/>
+                    <ComboBoxItem Content="6"/>
+                    <ComboBoxItem Content="7"/>
+                </ComboBox>
             </StackPanel>
             <StackPanel Margin="262,78,237,366" Width="206">
                 <TextBlock Text="Child(2 - 11)*"/>
-                <ComboBox DataContext="1" x:Name="CountChild"/>
+                <ComboBox DataContext="1" x:Name="CountChild">
+                    <ComboBoxItem Content="0"/>
+                    <ComboBoxItem Content="1"/>
+                    <ComboBoxItem Content="2"/>
+                    <ComboBoxItem Content="3"/>
+                    <ComboBoxItem Content="4"/>
+                    <ComboBoxItem Content="5"/>
+                    <ComboBoxItem Content="6"/>
+                    <ComboBoxItem Content="7"/>
+                </ComboBox>
             </StackPanel>
             <StackPanel Margin="492,78,7,366" Width="206">
                 <TextBlock Text="Infant*"/>
-                <ComboBox DataContext="1" x:Name="CountInfant"/>
+                <ComboBox DataContext="1" x:Name="CountInfant">
+                    <ComboBoxItem Content="0"/>
+                    <ComboBoxItem Content="1"/>
+                    <ComboBoxItem Content="2"/>
+                    <ComboBoxItem Content="3"/>
+                    <ComboBoxItem Content="4"/>
+                    <ComboBoxItem Content="5"/>
+                    <ComboBoxItem Content="6"/>
+                    <ComboBoxItem Content="7"/>
+                </ComboBox>
             </StackPanel>
-            <Button Margin="16,163,539,310" Name ="SearchFlights" Content="Search" FontSize="20" Padding="3" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Stretch" Height="32"/>
+            <Button Margin="16,163,539,310" Name ="SearchFlights" Content="Search" FontSize="20" Padding="3" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Stretch" Height="32" Click="SearchFlights_Click"/>
+            <Button Margin="492,173,63,300" Name ="ReserveTicket" Content="Reserve" FontSize="20" Padding="3" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Stretch" Height="32" Click="ReserveTicket_Click"/>
+            <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="277" Margin="15,218,15,15" VerticalAlignment="Top" Width="679"/>
         </Grid>
     </Grid>
 </Page>

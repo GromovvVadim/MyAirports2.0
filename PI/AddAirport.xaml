@@ -7,7 +7,33 @@
       mc:Ignorable="d" 
       d:DesignHeight="500" d:DesignWidth="700"
       Title="AddAirport">
-   
+
+    <Page.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="Helvetica"/>
+            <Setter Property="FontWeight" Value="Light"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontFamily" Value="Helvetica"/>
+            <Setter Property="FontWeight" Value="Light"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Opacity" Value="0.5"/>
+            <Setter Property="Height" Value="25"/>
+        </Style>
+        <Style x:Key="BorderStyle">
+            <Setter Property="Control.Height" Value="2"/>
+            <Setter Property="Control.Background" Value="White"/>
+            <Setter Property="Control.Opacity" Value="0.5"/>
+        </Style>
+    </Page.Resources>
     <Grid>
         <Grid.Background>
             <LinearGradientBrush>
@@ -16,89 +42,22 @@
             </LinearGradientBrush>
         </Grid.Background>
         <StackPanel Orientation="Vertical" Margin="0,0,0,343">
-            <Label FontFamily="Helvetica"
-                   FontWeight="Light" 
-                   Foreground="Black"
-                   
-                   FontSize="20"
-                   Background="Transparent"
-                   Content="Назва міста:" Margin="220,30,229,0"
-                   />
-            <TextBox FontFamily="Helvetica"
-                            FontWeight="Light"
-                            x:Name="AddCityBox"
-                            FontSize="20"
-                            Foreground="White"
-                            Background="Transparent"
-                            BorderThickness="0"
-                            HorizontalContentAlignment="Left"
-                            Opacity="0.5"
-                            Height="30" Margin="220,0,229,0" RenderTransformOrigin="0.151,2.141"/>
-            <Border
-                       Height="2"
-                       Background="White"
-                       Opacity="0.5" Margin="220,0,229,0"/>
+            <Label Content="Назва міста:" Margin="220,30,229,0"/>
+            <TextBox x:Name="AddCityBox" Margin="229,0,229,0"/>
+            <Border Style="{StaticResource BorderStyle}" Margin="229,0,229,0"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" Margin="-10,117,10,226">
-            <Label FontFamily="Helvetica"
-                   FontWeight="Light" 
-                   Foreground="Black"
-                   HorizontalAlignment="Right"
-                   FontSize="20"
-                   Background="Transparent"
-                   Content="Назва країни:" Margin="0,30,225,0" Width="246"
-                   />
-            <TextBox FontFamily="Helvetica"
-                            FontWeight="Light"
-                            x:Name="AddCountryBox"
-                            FontSize="20"
-                            Foreground="White"
-                            Background="Transparent"
-                            BorderThickness="0"
-                            HorizontalContentAlignment="Left"
-                            Opacity="0.5"
-                            Height="30" Margin="229,0" RenderTransformOrigin="0.151,2.141"/>
-            <Border
-                       Height="2"
-                       Background="White"
-                       Opacity="0.5" Margin="229,0"/>
+            <Label Content="Назва країни:" Margin="229,30,229,0"/>
+            <TextBox x:Name="AddCountryBox" Margin="229,0"/>
+            <Border Style="{StaticResource BorderStyle}" Margin="229,0,229,0"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" Margin="-10,234,10,109">
-            <Label FontFamily="Helvetica"
-                   FontWeight="Light" 
-                   Foreground="Black"
-                   HorizontalAlignment="Center"
-                   FontSize="20"
-                   Background="Transparent"
-                   Content="Назва ИАТА:" Margin="226,30,225,0" Width="249"
-                   />
-            <TextBox FontFamily="Helvetica"
-                            FontWeight="Light"
-                            x:Name="AddIATABox"
-                            FontSize="20"
-                            Foreground="White"
-                            Background="Transparent"
-                            BorderThickness="0"
-                            HorizontalContentAlignment="Left"
-                            Opacity="0.5"
-                            Height="30" Margin="229,0,229,0" RenderTransformOrigin="0.151,2.141"/>
-            <Border Width="250"
-                       Height="2"
-                       Background="White"
-                       Opacity="0.5"/>
+            <Label Content="Назва ИАТА:" Margin="226,30,225,0" Width="249"/>
+            <TextBox x:Name="AddIATABox" Margin="229,0,229,0"/>
+            <Border Style="{StaticResource BorderStyle}" Margin="229,0,229,0"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" Margin="0,391,0,-19">
-            <Button Height="76" 
-                    Margin="206,0,222,0"
-                    Name="ConfimAddAirport"
-                    Click="ConfimAddAirport_Click"
-                    Content="Додати Аеропорт"
-                    FontSize="20"
-                    FontFamily="Helvetica"
-                    FontWeight="Light" 
-                    Foreground="Black"
-                    HorizontalAlignment="Center" Width="272" RenderTransformOrigin="0.5,0.5" >
-            </Button>
+            <Button Height="76" Margin="206,0,222,0" Name="ConfimAddAirport" Click="ConfimAddAirport_Click" Content="Додати Аеропорт" FontSize="20" Foreground="Black" HorizontalAlignment="Center" Width="272" />
         </StackPanel>
     </Grid>
 </Page>

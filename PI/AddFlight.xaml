@@ -9,7 +9,36 @@
       d:DesignHeight="500" d:DesignWidth="700"
       Title="AddFlight"
       Loaded="Page_Loaded">
-    
+    <Page.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="Helvetica"/>
+            <Setter Property="FontWeight" Value="Light"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Width" Value="182"/>
+            <Setter Property="IsSynchronizedWithCurrentItem" Value="True"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontFamily" Value="Helvetica"/>
+            <Setter Property="FontWeight" Value="Light"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Opacity" Value="0.5"/>
+            <Setter Property="Height" Value="25"/>
+        </Style>
+        <Style x:Key="BorderStyle">
+            <Setter Property="Control.Height" Value="2"/>
+            <Setter Property="Control.Background" Value="White"/>
+            <Setter Property="Control.Opacity" Value="0.5"/>
+        </Style>
+    </Page.Resources>
     <Grid>
         <Grid.Background>
             <LinearGradientBrush>
@@ -18,124 +47,38 @@
             </LinearGradientBrush>
         </Grid.Background>
         <StackPanel Orientation="Vertical" Margin="0,0,380,410">
-            <Label FontFamily="Helvetica"
-                   FontWeight="Light" 
-                   Foreground="Black" 
-                   FontSize="20"
-                   Background="Transparent"
-                   Content="Depart Town:" Margin="78,30,60,0"/>
-            <ComboBox 
-                HorizontalAlignment="Left" 
-                Width="182" 
-                Margin="78,0,0,0"
-                SelectionChanged="ComboBox_SelectionChanged"
-                Name="DepartCityComboBox" 
-                IsSynchronizedWithCurrentItem="True"/>
+            <Label Content="Depart Town:" Margin="78,30,60,0"/>
+            <ComboBox Name="DepartCityComboBox" Margin="78,0,0,0"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" Margin="0,69,380,336">
-            <Label FontFamily="Helvetica"
-                   FontWeight="Light" 
-                   Foreground="Black" 
-                   FontSize="20"
-                   Background="Transparent"
-                   Content="Depart Date:" Margin="78,30,60,0"/>
-            <DatePicker 
-                Name="DepartDate"
-                Margin="78,0,60,0"/>
+            <Label Content="Depart Date:" Margin="78,30,60,0"/>
+            <DatePicker Name="DepartDate" Margin="78,0,60,0"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" Margin="0,142,380,239">
-            <Label FontFamily="Helvetica"
-                   FontWeight="Light" 
-                   Foreground="Black" 
-                   FontSize="20"
-                   Background="Transparent"
-                   Content="Depart Time:" Margin="80,30,60,0"/>
+            <Label Content="Depart Time:" Margin="80,30,60,0"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" Margin="350,0,30,410">
-            <Label FontFamily="Helvetica"
-                   FontWeight="Light" 
-                   Foreground="Black" 
-                   FontSize="20"
-                   Background="Transparent"
-                   Content="Arrival Town:" Margin="78,30,60,0"/>
-            <ComboBox 
-                HorizontalAlignment="Left" 
-                Width="182" 
-                Margin="78,0,0,0"
-                SelectionChanged="ComboBox_SelectionChanged"
-                Name="ArrivalCityComboBox" IsSynchronizedWithCurrentItem="True"/>
+            <Label Content="Arrival Town:" Margin="78,30,60,0"/>
+            <ComboBox Name="ArrivalCityComboBox" Margin="78,0,0,0"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" Margin="350,69,30,336">
-            <Label FontFamily="Helvetica"
-                   FontWeight="Light" 
-                   Foreground="Black" 
-                   FontSize="20"
-                   Background="Transparent"
-                   Content="Arrival Date:" Margin="78,30,60,0"/>
-            <DatePicker 
-                Name="ArrivalDate"
-                Margin="78,0,60,0"/>
+            <Label Content="Arrival Date:" Margin="78,30,60,0"/>
+            <DatePicker Name="ArrivalDate" Margin="78,0,60,0"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" Margin="350,142,30,239">
-            <Label FontFamily="Helvetica"
-                   FontWeight="Light" 
-                   Foreground="Black" 
-                   FontSize="20"
-                   Background="Transparent"
-                   Content="Arrival Time:" Margin="80,30,60,0"/>
+            <Label Content="Arrival Time:" Margin="80,30,60,0"/>
         </StackPanel>
-        <Button Height="76" 
-                    Margin="204,388,224,36"
-                    Name="ConfimAddFlight"
-                    Click="ConfimAddFlight_Click"
-                    Content="Add Flight"
-                    FontSize="20"
-                    FontFamily="Helvetica"
-                    FontWeight="Light" 
-                    Foreground="Black"
-                    HorizontalAlignment="Center" Width="272" RenderTransformOrigin="0.5,0.5" >
-        </Button>
+        <Button Height="76" Margin="204,388,224,36" Name="ConfimAddFlight" Click="ConfimAddFlight_Click" Content="Add Flight" FontSize="20" Foreground="Black" HorizontalAlignment="Center" Width="272"/>
         <StackPanel Orientation="Vertical" Margin="0,229,380,181">
-            <Label FontFamily="Helvetica"
-                FontWeight="Light" 
-                Foreground="Black" 
-                FontSize="20"
-                Background="Transparent"
-                Content="Aiplane's id:" Margin="78,30,60,0"/>
-            <ComboBox 
-                HorizontalAlignment="Left" 
-                Width="182" 
-                Margin="78,0,0,0"
-                x:Name="AiplaneIdComboBox" 
-                IsSynchronizedWithCurrentItem="True"/>
+            <Label Content="Aiplane's id:" Margin="78,30,60,0"/>
+            <ComboBox x:Name="AiplaneIdComboBox" Margin="78,0,0,0"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" Margin="350,229,30,181">
-            <Label FontFamily="Helvetica"
-                FontWeight="Light" 
-                Foreground="Black" 
-                FontSize="20"
-                Background="Transparent"
-                Content="Airline:" Margin="78,30,60,0"/>
-            <TextBox 
-                HorizontalAlignment="Left" 
-                Width="182" 
-                Margin="78,0,0,0"
-                x:Name="AirlineBox"
-                FontFamily="Helvetica"
-                FontWeight="Black"
-                FontSize="20"
-                Foreground="Black"
-                Background="Transparent"
-                BorderThickness="0"/>
-            <Border
-                       Height="2"
-                       Background="White"
-                       Opacity="0.5" Margin="78,0,60,0"/>
-            
+            <Label Content="Airline:" Margin="78,30,60,0"/>
+            <TextBox Margin="78,0,60,0" x:Name="AirlineBox"/>
+            <Border Style="{StaticResource BorderStyle}" Margin="78,0,60,0"/>
         </StackPanel>
-        <wpfTool:TimePicker Margin="79,204,440,271" Name="DepartTimePicker">
-            
-        </wpfTool:TimePicker>
+        <wpfTool:TimePicker Margin="79,204,440,271" Name="DepartTimePicker"/>
         <wpfTool:TimePicker Margin="430,204,89,271" Name="ArrivalTimePicker"/>
     </Grid>
 </Page>
