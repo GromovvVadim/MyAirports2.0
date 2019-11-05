@@ -9,6 +9,45 @@
         WindowStyle="None" ResizeMode="NoResize"
         MouseDown="Window_MouseDown">
 
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="Helvetica"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Opacity" Value="0.5"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Helvetica"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontFamily" Value="Helvetica"/>
+            <Setter Property="FontWeight" Value="Light"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Light"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Opacity" Value="0.5"/>
+            <Setter Property="Width" Value="164"/>
+        </Style>
+        <Style TargetType="PasswordBox">
+            <Setter Property="FontFamily" Value="Helvetica"/>
+            <Setter Property="FontWeight" Value="Light"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Opacity" Value="0.5"/>
+            <Setter Property="Width" Value="164"/>
+        </Style>
+    </Window.Resources>
+    
     <Grid>
         <Border CornerRadius="10" Grid.RowSpan="2">
             <Border.Background>
@@ -17,90 +56,25 @@
                     <GradientStop Color="#f083da" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
-            <Button Content="X" 
-                        Name="ExitButton" 
-                        Click="ExitButton_Click" 
-                        HorizontalAlignment="Left" 
-                        VerticalAlignment="Top" 
-                        Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" 
-                        Width="25" 
-                        FontSize="18"
-                        FontWeight="Bold"
-                        Margin="355,0,0,0" 
-                        Height="31"/>
+            <Button Content="X" Name="ExitButton" 
+                    Click="ExitButton_Click" VerticalAlignment="Top" 
+                    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Width="25" 
+                    FontSize="18"   FontWeight="Bold"
+                    Margin="355,0,0,0" Height="31"/>
         </Border>
         <Image Source="Photos/airplane.png" Width="80" Margin="155,10,145,346"/>
-        <TextBlock Text="Registration"
-                          FontWeight="Bold"
-                          FontFamily="helvetica"
-                          FontSize="22"
-                          Foreground="White"
-                          HorizontalAlignment="Center" Margin="131,98,123,311"/>
+        <TextBlock Text="Registration" Margin="131,98,123,311"/>
         <StackPanel Orientation="Horizontal" Margin="0,139,0,238">
-
-            <Label
-                 FontFamily="Helvetica"
-                 FontWeight="Bold"
-                 Content="Логін:"
-                 FontSize="20"
-                 Foreground="Black"
-                 Background="Transparent"
-                
-                 Opacity="0.5"
-                 Margin="68,10,237,32" RenderTransformOrigin="0.5,0.5" Width="73"/>
-            <TextBox Width="164" Margin="-250,10,0,32"
-                     FontFamily="Helvetica"
-                            FontWeight="Light"
-                            Name="LoginBlock"
-                            FontSize="20"
-                            HorizontalAlignment="Center"
-                            Foreground="White"
-                            Background="Transparent" 
-                            Opacity="0.5"/>
-
+            <Label Content="Логін:" Margin="68,10,237,32"  Width="73"/>
+            <TextBox Name="LoginBlock" Margin="-250,10,0,32"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="1,198,-1,175" RenderTransformOrigin="0.5,0.5">
-
-            <Label
-                FontFamily="Helvetica"
-                FontWeight="Bold"
-                Content="Пароль:"
-                FontSize="20"
-                Foreground="Black"
-                Background="Transparent"
-                Opacity="0.5"
-                Margin="68,10,237,32" RenderTransformOrigin="0.5,0.5" Width="87"/>
-            <PasswordBox Width="164" Margin="-250,10,0,32"
-                FontFamily="Helvetica"
-                FontWeight="Light"
-                x:Name="PasswordBox"
-                FontSize="20"
-                HorizontalAlignment="Center"
-                Foreground="White"
-                Background="Transparent" 
-                Opacity="0.5"/>
-
+            <Label Content="Пароль:" Margin="68,10,237,32" Width="87"/>
+            <PasswordBox Name="PasswordBox" Margin="-250,10,0,32"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="1,249,-1,123" RenderTransformOrigin="0.5,0.5">
-            <Label
-                FontFamily="Helvetica"
-                FontWeight="Bold"
-                Content="Пошта:"
-                FontSize="20"
-                Foreground="Black"
-                Background="Transparent"
-                Opacity="0.5"
-                Margin="68,10,237,32" RenderTransformOrigin="0.5,0.5"/>
-            <TextBox Width="164" 
-                       Margin="-250,10,0,32"
-                       FontFamily="Helvetica"
-                       FontWeight="Light"
-                       Name="EmailBlock"
-                       FontSize="20"
-                       HorizontalAlignment="Center"
-                       Foreground="White"
-                       Background="Transparent" 
-                       Opacity="0.5"/>
+            <Label Content="Пошта:" Margin="68,10,237,32" RenderTransformOrigin="0.5,0.5"/>
+            <TextBox Name="EmailBlock" Margin="-250,10,0,32"/>
         </StackPanel>
         <Button Name="RegistationButton" Click="RegistationButton_Click" Height="40" Content="Зареєструватися" Margin="131,357,123,53"/>
     </Grid>

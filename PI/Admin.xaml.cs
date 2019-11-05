@@ -63,7 +63,6 @@ namespace PI
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Main.Content = new AddFlight();
-
         }
     }
 }

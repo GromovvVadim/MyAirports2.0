@@ -40,7 +40,7 @@ namespace PI
                     SqlCommand cmd = new SqlCommand();
                     con.Open();
                     cmd.Connection = con;
-                    cmd.CommandText = "SELECT * FROM Airport";
+                    cmd.CommandText = "SELECT DISTINCT City FROM Airport";
                     SqlDataReader dr = cmd.ExecuteReader();
 
                     while (dr.Read())

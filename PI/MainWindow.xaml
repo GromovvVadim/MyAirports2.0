@@ -9,7 +9,51 @@
         AllowsTransparency="True" Background="Transparent"
         WindowStyle="None" ResizeMode="NoResize"
         MouseDown="Window_MouseDown">
-    
+    <Window.Resources>
+        <Style x:Key="TitleTextBlock">
+            <Setter Property="Control.FontFamily" Value="Helvetica"/>
+            <Setter Property="Control.FontWeight" Value="Bold"/>
+            <Setter Property="Control.FontSize" Value="22"/>
+            <Setter Property="Control.Foreground" Value="White"/>
+            <Setter Property="Control.HorizontalAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="TextBoxStyle">
+            <Setter Property="Control.FontFamily" Value="Helvetica"/>
+            <Setter Property="Control.FontWeight" Value="Light"/>
+            <Setter Property="Control.FontSize" Value="20"/>
+            <Setter Property="Control.HorizontalAlignment" Value="Center"/>
+            <Setter Property="Control.Foreground" Value="White"/>
+            <Setter Property="Control.Background" Value="Transparent"/>
+            <Setter Property="Control.BorderThickness" Value="0"/>
+            <Setter Property="Control.FontWeight" Value="Light"/>
+            <Setter Property="Control.Width" Value="250"/>
+            <Setter Property="Control.HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Control.Opacity" Value="0.5"/>
+            <Setter Property="Control.Height" Value="25"/>
+            <Setter Property="Control.Margin" Value="63,0,0,0"/>
+        </Style>
+        <Style x:Key="PasswordBoxStyle">
+            <Setter Property="Control.FontFamily" Value="Helvetica"/>
+            <Setter Property="Control.FontWeight" Value="Light"/>
+            <Setter Property="Control.FontSize" Value="20"/>
+            <Setter Property="Control.HorizontalAlignment" Value="Center"/>
+            <Setter Property="Control.Foreground" Value="White"/>
+            <Setter Property="Control.Background" Value="Transparent"/>
+            <Setter Property="Control.BorderThickness" Value="0"/>
+            <Setter Property="Control.FontWeight" Value="Light"/>
+            <Setter Property="Control.Width" Value="250"/>
+            <Setter Property="Control.HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Control.Opacity" Value="0.5"/>
+            <Setter Property="Control.Height" Value="25"/>
+            <Setter Property="Control.Margin" Value="63,0,0,0"/>
+        </Style>
+        <Style x:Key="BorderStyle">
+            <Setter Property="Control.Width" Value="250"/>
+            <Setter Property="Control.Height" Value="2"/>
+            <Setter Property="Control.Background" Value="White"/>
+            <Setter Property="Control.Opacity" Value="0.5"/>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid RenderTransformOrigin="0.503,0.449">
             <Grid.RowDefinitions>
@@ -24,74 +68,27 @@
                         <GradientStop Color="#f083da" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
-                <Button Content="X" 
-                        Name="ExitButton" 
-                        Click="ExitButton_Click_1" 
-                        HorizontalAlignment="Left" 
-                        VerticalAlignment="Top" 
-                        Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" 
-                        Width="25" 
-                        FontSize="18"
-                        FontWeight="Bold"
-                        Margin="355,0,0,0" 
+                <Button Content="X" Name="ExitButton" 
+                        Click="ExitButton_Click_1" HorizontalAlignment="Left" 
+                        VerticalAlignment="Top" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" 
+                        Width="25" FontSize="18"
+                        FontWeight="Bold" Margin="355,0,0,0" 
                         Height="31"/>
             </Border>
 
             <StackPanel VerticalAlignment="Center">
                 <Image Source="Photos/airplane.png" Width="80"/>
-                <TextBlock Text="MyAirplane"
-                          FontWeight="Light"
-                          FontFamily="helvetica"
-                          FontSize="22"
-                          Foreground="White"
-                          HorizontalAlignment="Center"/>
+                <TextBlock Text="MyAirplane" Style="{StaticResource TitleTextBlock}"/>
             </StackPanel>
             <StackPanel Grid.Row="1" >
                 <StackPanel Orientation="Horizontal">
-                    <TextBox FontFamily="Helvetica"
-                            FontWeight="Light"
-                            Name="Login1"
-                            FontSize="20"
-                            HorizontalAlignment="Center"
-                            Foreground="White"
-                            Background="Transparent"
-                            BorderThickness="0"
-                            Width="235"
-                            HorizontalContentAlignment="Left"
-                            Opacity="0.5"
-                            Height="25"
-                            Margin="63,0,0,0"/>
-
+                    <TextBox Name="Login1" Style="{StaticResource TextBoxStyle}"/>
                 </StackPanel>
-                <Border Width="250"
-                       Height="2"
-                       Background="White"
-                       Opacity="0.5"/>
-
-
-
+                <Border Style="{StaticResource BorderStyle}"/>
                 <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
-                    <PasswordBox FontFamily="Helvetica"
-                            FontWeight="Light"
-                            
-                            Name ="Password"
-                            FontSize="20"
-                            HorizontalAlignment="Center"
-                            Foreground="White"
-                            Background="Transparent"
-                            BorderThickness="0"
-                            Width="235"
-                            HorizontalContentAlignment="Left"
-                            Opacity="0.5"
-                            Height="25"
-                            Margin="63,0,0,0"/>
-
+                    <PasswordBox Name ="Password" Style="{StaticResource PasswordBoxStyle}"/>
                 </StackPanel>
-                <Border Width="250"
-                       Height="2"
-                       Background="White"
-                       Opacity="0.5"/>
-
+                <Border Style="{StaticResource BorderStyle}"/>
 
                 <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
                     <Button Name="Login" Click="Login_Click" Width="100" Height="40" Content="LOGIN" Margin="60,0,60,0"/>

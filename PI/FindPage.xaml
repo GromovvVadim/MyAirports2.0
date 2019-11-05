@@ -5,60 +5,64 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PI"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="500" d:DesignWidth="700"
       Title="FindPage"
       Loaded="Page_Loaded">
 
+    <Page.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontWeight" Value="Light"/>
+            <Setter Property="FontFamily" Value="Helvetica"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Padding" Value="3"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Height" Value="32"/>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+        </Style>
+        <Style TargetType="DatePicker">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="SelectedDateFormat" Value="Long"/>
+        </Style>
+    </Page.Resources>
+    
     <Grid Name="FindPanel" HorizontalAlignment="Left" Margin="-5,-5,0,0" Width="705" >
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
         <Grid.Background>
             <LinearGradientBrush>
                 <GradientStop Color="#7be9f6" Offset="0.0"/>
                 <GradientStop Color="#f083da" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Border CornerRadius="10" Grid.RowSpan="2">
-            <Border.Background>
-                <LinearGradientBrush>
-                    <GradientStop Color="#7be9f6" Offset="0.0"/>
-                    <GradientStop Color="#f083da" Offset="1"/>
-                </LinearGradientBrush>
-            </Border.Background>
-        </Border>
         <Grid>
-            <StackPanel Margin="10,10,476,179" Width="206">
-                <TextBlock Text="Depart Airport*" FontWeight="Light" FontFamily="helvetica" FontSize="20" Padding="3" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Stretch" Height="32"/>
-                <ComboBox DataContext="1" Name="DepartAirport" Height="30" VerticalAlignment="Top">
-                </ComboBox>
+            <StackPanel Margin="16,10,483,432" Width="206">
+                <TextBlock Text="Depart Airport*" />
+                <ComboBox DataContext="1" Name="DepartAirport"/>
             </StackPanel>
-            <StackPanel Margin="255,10,231,179" Width="206">
-                <TextBlock Text="Arrival Airport*" FontWeight="Light" FontFamily="helvetica" FontSize="20" Padding="3" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Stretch" Height="32"/>
-                <ComboBox DataContext="1" x:Name="ArrivalAirport" Height="30" VerticalAlignment="Top">
-                </ComboBox>
+            <StackPanel Margin="262,10,237,432" Width="206">
+                <TextBlock Text="Arrival Airport*"/>
+                <ComboBox DataContext="1" x:Name="ArrivalAirport"/>
             </StackPanel>
-            <StackPanel Margin="486,10,0,179" Width="206">
-                <TextBlock Text="Date*" FontWeight="Light" FontFamily="helvetica" FontSize="20" Padding="3" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Stretch" Height="32"/>
-                <DatePicker Name="DatePicker" Height="30" SelectedDateFormat="Long" RenderTransformOrigin="0.5,0.923" ></DatePicker>
+            <StackPanel Margin="492,10,7,432" Width="206">
+                <TextBlock Text="Date*"/>
+                <DatePicker Name="DatePicker"/>
             </StackPanel>
-            <StackPanel Margin="10,108,476,81" Width="206">
-                <TextBlock Text="Adult*" FontWeight="Light" FontFamily="helvetica" FontSize="20" Padding="3" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Stretch" Height="32"/>
-                <ComboBox DataContext="1" x:Name="CountAdult" Height="30" VerticalAlignment="Top">
-                </ComboBox>
+            <StackPanel Margin="16,78,483,366" Width="206">
+                <TextBlock Text="Adult*"/>
+                <ComboBox DataContext="1" x:Name="CountAdult"/>
             </StackPanel>
-            <StackPanel Margin="255,108,231,81" Width="206">
-                <TextBlock Text="Child(2 - 11)*" FontWeight="Light" FontFamily="helvetica" FontSize="20" Padding="3" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Stretch" Height="32"/>
-                <ComboBox DataContext="1" x:Name="CountChild" Height="30" VerticalAlignment="Top">
-                </ComboBox>
+            <StackPanel Margin="262,78,237,366" Width="206">
+                <TextBlock Text="Child(2 - 11)*"/>
+                <ComboBox DataContext="1" x:Name="CountChild"/>
             </StackPanel>
-            <StackPanel Margin="486,108,0,81" Width="206">
-                <TextBlock Text="Infant*" FontWeight="Light" FontFamily="helvetica" FontSize="20" Padding="3" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Stretch" Height="32"/>
-                <ComboBox DataContext="1" x:Name="CountInfant" Height="30" VerticalAlignment="Top">
-                </ComboBox>
+            <StackPanel Margin="492,78,7,366" Width="206">
+                <TextBlock Text="Infant*"/>
+                <ComboBox DataContext="1" x:Name="CountInfant"/>
             </StackPanel>
-            <Button Margin="10,204,546,10" Name ="SearchFlights" Content="Search" FontWeight="Light" FontFamily="helvetica" FontSize="20" Padding="3" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Stretch" Height="32"></Button>
+            <Button Margin="16,163,539,310" Name ="SearchFlights" Content="Search" FontSize="20" Padding="3" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Stretch" Height="32"/>
         </Grid>
     </Grid>
 </Page>

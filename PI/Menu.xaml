@@ -9,6 +9,30 @@
         WindowStyle="None" ResizeMode="NoResize"
         MouseDown="Window_MouseDown"
         Loaded="Window_Loaded">
+
+    <Window.Resources>
+        <Style x:Key="MenuTextBlock">
+            <Setter Property="Control.FontFamily" Value="Helvetica"/>
+            <Setter Property="Control.FontWeight" Value="Light"/>
+            <Setter Property="Control.FontSize" Value="26"/>
+            <Setter Property="Control.HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Control.Foreground" Value="White"/>
+            <Setter Property="Control.VerticalAlignment" Value="Center"/>
+            <Setter Property="Control.Padding" Value="3"/>
+            <Setter Property="Control.Width" Value="140"/>
+            <Setter Property="Control.Height" Value="40"/>
+            <Setter Property="Control.Margin" Value="0,8,0,0"/>
+        </Style>
+        <Style x:Key="TitleTextBlock">
+            <Setter Property="Control.FontWeight" Value="Bold"/>
+            <Setter Property="Control.FontFamily" Value="Helvetica"/>
+            <Setter Property="Control.FontSize" Value="33"/>
+            <Setter Property="Control.HorizontalAlignment" Value="Center"/>
+            <Setter Property="Control.Foreground" Value="White"/>
+            <Setter Property="Control.Margin" Value="10,0,702,450"/>
+            <Setter Property="Control.Width" Value="188"/>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
@@ -21,87 +45,38 @@
                     <GradientStop Color="#f083da" Offset="1"/>
                 </LinearGradientBrush>
             </DockPanel.Background>
-            <Image Source="Photos/airplane.png" Margin="0,48,0,356" Width="203" RenderTransformOrigin="-0.594,0.547"/>
+            <Image Source="Photos/airplane.png" Margin="0,52,0,356" Width="203" />
         </DockPanel>
-        <TextBlock Text="MyAirplane"
-                          FontWeight="Bold"
-                          FontFamily="helvetica"
-                          FontSize="33"
-                          HorizontalAlignment="Center"
-                          Foreground="White" RenderTransformOrigin="0.5,0.5" Margin="10,0,702,452" Width="188" Grid.Row="1"/>
-        <Button x:Name="FindButton" Click="FindButton_Click" HorizontalAlignment="Stretch" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Margin="0,136,702,0" Grid.Row="1" VerticalAlignment="Top" Height="50">
+        
+        <TextBlock Text="MyAirplane" Grid.Row="1" Style="{StaticResource TitleTextBlock}" />
+        <Button x:Name="FindButton" Click="FindButton_Click" HorizontalAlignment="Stretch" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Margin="0,150,702,0" Grid.Row="1" VerticalAlignment="Top" Height="50">
             <StackPanel Orientation="Horizontal">
-                <Image Source="Photos/find.png" Width="42" Height="42"/>
-                <TextBlock Text="Знайти"
-                          FontWeight="Light"
-                          FontFamily="helvetica"
-                          FontSize="26"
-                          Padding="3"
-                          Foreground="White"
-                          VerticalAlignment="Center"
-                          HorizontalAlignment="Stretch" 
-                          Width="134" 
-                          Height="40"/>
+                <Image Source="Photos/find.png" Width="40" Height="40"/>
+                <TextBlock Text="Знайти" Style="{StaticResource MenuTextBlock}"/>
             </StackPanel>
         </Button>
-        <Button x:Name="ScheduleButton" Click="ScheduleButton_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Width="198" Margin="0,192,0,0" Grid.Row="1" Height="50">
+        <Button x:Name="ScheduleButton" Click="ScheduleButton_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Width="198" Margin="0,205,0,0" Grid.Row="1" Height="50">
             <StackPanel Orientation="Horizontal">
-                <Image Source="Photos/calendar.png" Width="42" Height="42"/>
-                <TextBlock Text="Розклад"
-                          FontWeight="Light"
-                          FontFamily="helvetica"
-                          FontSize="26"
-                          Padding="3"
-                          Foreground="White"
-                          VerticalAlignment="Center"
-                          HorizontalAlignment="Stretch" 
-                          Width="140" 
-                          Height="40"/>
+                <Image Source="Photos/calendar.png" Width="40" Height="40"/>
+                <TextBlock Text="Розклад" Style="{StaticResource MenuTextBlock}"/>
             </StackPanel>
         </Button>
-        <Button x:Name="MyTicketsButton" Click="MyTicketsButton_Click" HorizontalAlignment="Left" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Width="198" Margin="0,247,0,0" Grid.Row="1" Height="50">
+        <Button x:Name="MyTicketsButton" Click="MyTicketsButton_Click" HorizontalAlignment="Left" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Width="198" Margin="0,260,0,0" Grid.Row="1" Height="50">
             <StackPanel Orientation="Horizontal">
-                <Image Source="Photos/planeticket.png" Width="42" Height="42"/>
-                <TextBlock Text="Мої квитки"
-                          FontWeight="Light"
-                          FontFamily="helvetica"
-                          FontSize="26"
-                          Padding="3"
-                          Foreground="White"
-                          VerticalAlignment="Center"
-                          HorizontalAlignment="Stretch" 
-                          Width="142" 
-                          Height="40"/>
+                <Image Source="Photos/planeticket.png" Width="40" Height="40"/>
+                <TextBlock Text="Мої квитки" Style="{StaticResource MenuTextBlock}"/>
             </StackPanel>
         </Button>
-        <Button x:Name="CabinetButton" Click="CabinetButton_Click" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="198" Margin="0,302,0,0" Grid.Row="1" Height="50">
+        <Button x:Name="CabinetButton" Click="CabinetButton_Click" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="198" Margin="0,315,0,0" Grid.Row="1" Height="50">
             <StackPanel Orientation="Horizontal">
-                <Image Source="Photos/profile.png" Width="42" Height="42"/>
-                <TextBlock Text="Кабінет"
-                          FontWeight="Light"
-                          FontFamily="helvetica"
-                          FontSize="26"
-                          Padding="3"
-                          Foreground="White"
-                          VerticalAlignment="Center"
-                          HorizontalAlignment="Stretch" 
-                          Width="142" 
-                          Height="40"/>
+                <Image Source="Photos/profile.png" Width="40" Height="40"/>
+                <TextBlock Text="Кабінет" Style="{StaticResource MenuTextBlock}"/>
             </StackPanel>
         </Button>
-        <Button x:Name="ExitButton" Click="ExitButton_Click" HorizontalAlignment="Left" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Width="198" Margin="0,357,0,0" Grid.Row="1" Height="50">
+        <Button x:Name="ExitButton" Click="ExitButton_Click" HorizontalAlignment="Left" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Width="198" Margin="0,370,0,0" Grid.Row="1" Height="50">
             <StackPanel Orientation="Horizontal">
-                <Image Source="Photos/exit.png" Width="42" Height="42"/>
-                <TextBlock Text="Вихід"
-                          FontWeight="Light"
-                          FontFamily="helvetica"
-                          FontSize="26"
-                          Padding="3"
-                          Foreground="White"
-                          VerticalAlignment="Center"
-                          HorizontalAlignment="Stretch" 
-                          Width="142" 
-                          Height="40"/>
+                <Image Source="Photos/exit.png" Width="40" Height="40"/>
+                <TextBlock Text="Вихід" Style="{StaticResource MenuTextBlock}"/>
             </StackPanel>
         </Button>
         <Grid Margin="203,2,0,0" >
