@@ -1,0 +1,98 @@
+﻿<Window x:Class="PI.Personal_Informariton"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PI"
+        Title="Personal_Informariton" Height="450" Width="450"
+        AllowsTransparency="True" Background="Transparent"
+        WindowStyle="None" ResizeMode="NoResize"
+        MouseDown="Window_MouseDown">
+  <Window.Resources>
+    <Style TargetType="Label">
+      <Setter Property="FontFamily" Value="Helvetica"/>
+      <Setter Property="FontWeight" Value="Light"/>
+      <Setter Property="Foreground" Value="Black"/>
+      <Setter Property="FontSize" Value="18"/>
+      <Setter Property="Background" Value="Transparent"/>
+      <Setter Property="Height" Value="32"/>
+      <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+    <Style TargetType="TextBox">
+      <Setter Property="FontFamily" Value="Helvetica"/>
+      <Setter Property="FontWeight" Value="Light"/>
+      <Setter Property="Foreground" Value="Black"/>
+      <Setter Property="FontSize" Value="20"/>
+      <Setter Property="Background" Value="Transparent"/>
+      <Setter Property="BorderThickness" Value="0"/>
+      <Setter Property="HorizontalContentAlignment" Value="Left"/>
+      <Setter Property="Opacity" Value="0.5"/>
+      <Setter Property="Height" Value="25"/>
+    </Style>
+    <Style x:Key="BorderStyle">
+      <Setter Property="Control.Height" Value="2"/>
+      <Setter Property="Control.Background" Value="Black"/>
+      <Setter Property="Control.Opacity" Value="0.5"/>
+    </Style>
+    <Style TargetType="ComboBox">
+      <Setter Property="HorizontalAlignment" Value="Left"/>
+      <Setter Property="Width" Value="182"/>
+      <Setter Property="Height" Value="30"/>
+      <Setter Property="VerticalAlignment" Value="Top"/>
+      <Setter Property="IsSynchronizedWithCurrentItem" Value="True"/>
+    </Style>
+  </Window.Resources>
+  <Grid>
+    <Grid RenderTransformOrigin="0.503,0.449">
+      <Border>
+        <Border.Background>
+          <LinearGradientBrush>
+            <GradientStop Color="#C0C0C0"/>
+          </LinearGradientBrush>
+        </Border.Background>
+      </Border>
+      <Button Content="X" Name="ExitButton"
+                      Click="ExitButton_Click" HorizontalAlignment="Left"
+                      VerticalAlignment="Top" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                      Width="25" FontSize="18"
+                      FontWeight="Bold" Margin="425,-10,0,0"
+                      Height="47"/>
+
+      <StackPanel Orientation="Vertical" Margin="0,69,280,318">
+        <Label Content="Last Name:" Margin="10,0" Width="150"/>
+        <TextBox Name="SecondName" Margin="10,0"/>
+        <Border Style="{StaticResource BorderStyle}" Margin="10,0"/>
+      </StackPanel>
+      <StackPanel Orientation="Vertical" Margin="0,137,280,234">
+        <Label Content="First Name:" Margin="10,0" Width="150"/>
+        <TextBox x:Name="SecondName1" Margin="10,0"/>
+        <Border Style="{StaticResource BorderStyle}" Margin="10,0"/>
+      </StackPanel>
+      <StackPanel Orientation="Vertical" Margin="270,69,10,318">
+        <Label Content="Gender:" Margin="10,0" Width="150"/>
+        <ComboBox Name="Gender" Margin="10,0" Style="{StaticResource ComboBoxFlatStyle}" Height="30">
+          <ComboBoxItem Content="Male"/>
+          <ComboBoxItem Content="Female"/>
+        </ComboBox>
+      </StackPanel>
+      <StackPanel Orientation="Vertical" Margin="270,137,10,234">
+        <Label Content="BirthDate:" Margin="10,0" Width="150"/>
+        <DatePicker Name="BirthDate" Margin="10,0" />
+      </StackPanel>
+      <StackPanel Orientation="Vertical" Margin="270,205,10,166">
+        <Label Content="Seating:" Margin="10,0" Width="150"/>
+        <ComboBox Name="Seating" Margin="10,0" Style="{StaticResource ComboBoxFlatStyle}" Height="30">
+          <ComboBoxItem Content="First Class ($180)"/>
+          <ComboBoxItem Content="Bussines Class ($145)"/>
+          <ComboBoxItem Content="Economic Class ($100)"/>
+        </ComboBox>
+      </StackPanel>
+      <Button Margin="10,319,297,97" Name="AddPassenger" Click="AddPassenger_Click" Content="Add Passenger" FontSize="20" Foreground="Black" HorizontalAlignment="Center" Width="143"/>
+      <StackPanel Orientation="Vertical" Margin="0,205,280,166">
+        <Label Content="Document:" Margin="10,0" Width="150"/>
+        <TextBox x:Name="Document" Margin="10,0"/>
+        <Border Style="{StaticResource BorderStyle}" Margin="10,0"/>
+      </StackPanel>
+    </Grid>
+  </Grid>
+</Window>
