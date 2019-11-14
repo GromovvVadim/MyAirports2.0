@@ -1,0 +1,98 @@
+<Window x:Class="PI.Payment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PI"
+        Title="Payment" Height="450" Width="450"
+        AllowsTransparency="True" Background="Transparent"
+        WindowStyle="None" ResizeMode="NoResize"
+        MouseDown="Window_MouseDown" Loaded="Window_Loaded">
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="Helvetica"/>
+            <Setter Property="FontWeight" Value="Light"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Height" Value="32"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontFamily" Value="Helvetica"/>
+            <Setter Property="FontWeight" Value="Light"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Opacity" Value="0.5"/>
+            <Setter Property="Height" Value="25"/>
+        </Style>
+        <Style x:Key="BorderStyle">
+            <Setter Property="Control.Height" Value="2"/>
+            <Setter Property="Control.Background" Value="Black"/>
+            <Setter Property="Control.Opacity" Value="0.5"/>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Width" Value="182"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="IsSynchronizedWithCurrentItem" Value="True"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid RenderTransformOrigin="0.503,0.449">
+            <Border>
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#C0C0C0"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+            <Button Content="X" Name="ExitButton" 
+                        Click="ExitButton_Click" HorizontalAlignment="Left" 
+                        VerticalAlignment="Top" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" 
+                        Width="25" FontSize="18"
+                        FontWeight="Bold" Margin="425,-10,0,0" 
+                        Height="47"/>
+            <StackPanel Margin="10,10,139,381">
+                <Label Content="Payment" Height="48" Margin="10,0,10,0" Width="291" FontSize="30"/>
+                <Border Style="{StaticResource BorderStyle}" Margin="10,0,-115,0" Height="1"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="0,69,280,318">
+                <Label Content="Total sum:" Margin="10,0" Width="150"/>
+                <TextBox Name="TotalSum" Margin="10,0" IsReadOnly="True"/>
+                <Border Style="{StaticResource BorderStyle}" Margin="10,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="0,137,280,234">
+                <Label Content="Card Type:" Margin="10,0" Width="150"/>
+                <ComboBox Name="CardType" Margin="10,0" Style="{StaticResource ComboBoxFlatStyle}" Height="30">
+                    <ComboBoxItem Content="Master Card"/>
+                    <ComboBoxItem Content="Visa"/>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="270,69,10,318">
+                <Label Content="Card Owner:" Margin="10,0" Width="150"/>
+                <TextBox Name="CardOwner" Margin="10,0" />
+                <Border Style="{StaticResource BorderStyle}" Margin="10,0" Height="2"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="270,137,10,234">
+                <Label Content="Expiration Date:" Margin="10,0" Width="150"/>
+                <DatePicker Name="ExpirationDate" Margin="10,0" />
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="270,205,10,166">
+                <Label Content="CVC Number(3):" Margin="10,0" Width="150"/>
+                <TextBox Name="Cvc" Margin="10,0" />
+                <Border Style="{StaticResource BorderStyle}" Margin="10,0"/>
+            </StackPanel>
+            <Button Margin="10,319,297,97" Name="Pay" Click="Pay_Click" Content="Pay" FontSize="20" Foreground="Black" HorizontalAlignment="Center" Width="143"/>
+            <StackPanel Orientation="Vertical" Margin="0,205,280,166">
+                <Label Content="Card Number:" Margin="10,0" Width="150"/>
+                <TextBox x:Name="CardNumber" Margin="10,0"/>
+                <Border Style="{StaticResource BorderStyle}" Margin="10,0"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

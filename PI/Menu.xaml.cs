@@ -14,8 +14,8 @@ namespace PI
         }
         public Menu(string login)
         {
-            InitializeComponent();
             Login = login;
+            InitializeComponent();
         }
         public string Login { get; set; }
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -43,7 +43,7 @@ namespace PI
 
         private void FindButton_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new FindPage();
+            Main.Content = new FindPage(Login);
         }
         private void MyTicketsButton_Click(object sender, RoutedEventArgs e)
         {
@@ -52,7 +52,7 @@ namespace PI
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Main.Content = new FindPage();
+            Main.Content = new FindPage(Login);
         }
     }
 }

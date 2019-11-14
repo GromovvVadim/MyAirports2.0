@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace PI
 {
@@ -23,10 +24,11 @@ namespace PI
         {
             InitializeComponent();
         }
-        public Personal_Informariton(string Login)
+        public Personal_Informariton(string Login, int IdFlight)
         {
-            InitializeComponent();
+            this.IdFlight = IdFlight;
             this.Login = Login;
+            InitializeComponent();
         }
         public string Login { get; set; }
         public int IdFlight { get; set; }
@@ -45,7 +47,20 @@ namespace PI
 
         private void AddPassenger_Click(object sender, RoutedEventArgs e)
         {
-
+            if (SecondName.Text != "" && FirstName.Text != "" && Document.Text != "" && Gender.Text != "" && BirthDate.Text != "" && Seating.Text != "")
+            {
+                var sum = Int32.Parse(new String(string.Join(" ", Seating.Text.Split(' ').ToList()[2]).Where(Char.IsDigit).ToArray()));
+                string query = $"INSERT INTO PersonalInformation (FlightId,SecondName,FirstName,Gender,BirthDate,Document,Seating,Login)" +
+                        $"VALUES ('{IdFlight}','{SecondName.Text}','{FirstName.Text}','{Gender.Text}',CONVERT(date, '{BirthDate.Text}', 104),'{Document.Text}','{string.Join(" ", Seating.Text.Split(' ').ToList().GetRange(0, 2))}','{Login}')";
+                Class1.Add(query, sum);
+                this.Visibility = Visibility.Hidden;
+                Payment paymentWindow = new Payment(Login);
+                paymentWindow.Show();
+            }
+            else
+            {
+                MessageBox.Show("Input all information");
+            }
         }
     }
 }
